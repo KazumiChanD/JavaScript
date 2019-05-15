@@ -1,5 +1,6 @@
 let Citys = ["Crivitz", "Schwerin", "Parchim", "Rostock", "Köln"];
-let car = { color: "yellow", };
+let car = { color: "yellow",
+            home: "Crivitz", };
 let tire = { strain: "2,5 bar", };
 let raeder = 4;
 
@@ -11,6 +12,7 @@ function Main() {
 
     /**
      * Anzahl an Citys.length Autos werden erstellt
+     *
      * @param {array} Citys wird benötigt
      * @param {string} raeder wird benötigt
      */
@@ -21,6 +23,11 @@ function Main() {
     let myAuto = new Auto();
     let myStreets = new Street("Crivitz", "Parchim");
     console.log(myStreets.succesfull());
+
+    let move = function() {
+        if (!myStreets.succesfull() == undefined)
+
+    }
 }
 
 /**
@@ -28,7 +35,6 @@ function Main() {
  *
  * @param {string} Stadt1 wird benötigt
  * @param {string} Stadt2 wird benötigt
- *
  */
 function Street(Stadt1, Stadt2) {
     this.Stadt1 = Stadt1;
@@ -43,14 +49,16 @@ function Street(Stadt1, Stadt2) {
     }
     /**
      *
-     * @return {string} succesfullStreet enthält Stadt1 und Stadt2
      *
+     * @return {string} succesfullStreet enthält Stadt1 und Stadt2
      */
     this.succesfull = function() {
         let succesfullStreet = Symbol();
         succesfullStreet = Stadt1 + " " + Stadt2;
         return succesfullStreet;
     }
+
+
 }
 
 /**
@@ -73,9 +81,7 @@ function Auto(raeder, aufenthaltsort) {
      * Soll das Auto bewegen
      *
      */
-    let move = function() {
 
-    }
 }
 
 Main();
