@@ -14,9 +14,11 @@ Damit diese implementiert sind, muss man noch in der SortTimer.js zwei Zeilen hi
 Zeile 2 und 3 
 
 import {LeaSorter} from "./LeaSorter.js";
+
 import {LeaSelectionSorter} from "./LeaSelectionSort.js";
 
 und Zeile 16 und 17
 
 {name: 'LeaSorter', instance: new LeaSorter()},
+
 {name: 'LeaSelectionSorter', instance: new LeaSelectionSorter()},
