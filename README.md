@@ -1,6 +1,6 @@
 # JavaScript
 
-Um die js Dateien -Sort ausführen bzw testen zu können, muss erst das repo https://github.com/ZooRoyal/talks.git ausgecheckt werden.
+Um die js Dateien mit sort oder Sort im Namen ausführen bzw testen zu können, muss erst das repo https://github.com/ZooRoyal/talks.git ausgecheckt werden.
 
 cd talks
 
