@@ -1,25 +1,26 @@
 # JavaScript
 
-Um die js Dateien mit sort oder Sort im Namen ausführen bzw testen zu können, muss erst das repo https://github.com/ZooRoyal/talks.git ausgecheckt werden.
+Um einen eigenen Algorythmus einzufügen:
 
-cd talks
+* SortTimer.js öffnen
++ in Zeile (2 zum Beispiel) einfügen:  
 
-cd reveal
+```javascript
+import {IrgendeinName} from "./IrgendeinName.js";
+```
 
-cd sortingAlgorithms 
++ in Zeile (16 zum Beispiel)
 
-cd sourterSource Code und dort die einfügen.
+```javascript
+{name: 'IrgendeinName', instance: new IrgendeinName()},
+```
 
-Damit diese implementiert sind, muss man noch in der SortTimer.js zwei Zeilen hinzufügen.
++ in dem eigenen Algorythmus 
 
-Zeile 2 und 3 
+```javascript
+import {Sorter} from "./Sorter.js";
+export class IrgendeinName extends Sorter {
+    _runAlgorithm() {
+```
++ das Array ist mit **_this._itemsToSort;_** aufrufbar
 
-import {LeaSorter} from "./LeaSorter.js";
-
-import {LeaSelectionSorter} from "./LeaSelectionSort.js";
-
-und Zeile 16 und 17
-
-{name: 'LeaSorter', instance: new LeaSorter()},
-
-{name: 'LeaSelectionSorter', instance: new LeaSelectionSorter()},
