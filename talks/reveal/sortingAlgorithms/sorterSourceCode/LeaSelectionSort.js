@@ -7,48 +7,34 @@ export class LeaSelectionSorter extends Sorter {
         const itemsToSort = this._itemsToSort;
 
         /**
-         * Anzahl der Durchläufe
-         *
-         * @param itemsToSortLength beinhaltet die Länge der Variable
-         * @param itemsToSort beinhaltet die Variable
+         * Durchläufe zum überprüfen
          */
-        for (let j = 0; j < itemsToSortLength; j++) {
+        for (let currentPosition = 0; currentPosition < itemsToSortLength; currentPosition++) {
+            let minimumIndex = currentPosition;
 
             /**
-             * Durchläufe zum überprüfen
-             *
-             * @param itemsToSortLength beinhaltet die Länge der Variable
-             * @param itemsToSort beinhaltet die Variable
+             * verändern der kleinsten gespeicherten Zahl
              */
-            for (let i = 0; i < itemsToSortLength; i++) {
-                let temp = i;
-
-                /**
-                 * verändern der kleinsten gespeicherten Zahl
-                 *
-                 * @param itemsToSortLength beinhaltet die Länge der Variable
-                 * @param itemsToSort beinhaltet die Variable
-                 */
-                for (let k = 1; i < itemsToSortLength - k; k++) {
-                    if (itemsToSort[temp] > itemsToSort[k]) {
-                        temp = k;
-                    }
+            for (let k = currentPosition + 1; k < itemsToSortLength; k++) {
+                if (itemsToSort[minimumIndex] > itemsToSort[k]) {
+                    minimumIndex = k;
                 }
-                swap(itemsToSort, temp, i);
             }
+            swap(itemsToSort, minimumIndex, currentPosition);
         }
+
 
         /**
          * Austauschen der kleinsten und aktuellsten Zahl
          *
          * @param itemsToSort beinhaltet die Variable
-         * @param temp
-         * @param i
+         * @param minimumIndex
+         * @param currentPosition
          */
-        function swap(itemsToSort, temp, i) {
-            let old = itemsToSort[i];
-            itemsToSort[i] = itemsToSort[temp];
-            itemsToSort[temp] = old;
+        function swap(itemsToSort,minimumIndex, currentPosition) {
+            let old = itemsToSort[currentPosition];
+            itemsToSort[currentPosition] = itemsToSort[minimumIndex];
+            itemsToSort[minimumIndex] = old;
         }
 
     }
