@@ -1,6 +1,7 @@
 import {BubbleSorter} from "./BubbleSorter.js";
 import {LeaSorter} from "./LeaSorter.js";
 import {LeaSelectionSorter} from "./LeaSelectionSort.js";
+import {LeaInsertSorter} from "./LeaInsertSort.js";
 import {InsertionSorter} from "./InsertionSort.js";
 import {SelectionSorter} from "./SelectionSort.js";
 import {QuickSorter} from "./QuickSort.js";
@@ -15,6 +16,7 @@ export class SortTimer {
         {name: 'BubbleSorter', instance: new BubbleSorter()},
         {name: 'LeaSorter', instance: new LeaSorter()},
         {name: 'LeaSelectionSorter', instance: new LeaSelectionSorter()},
+        {name: 'LeaInsertSorter', instance: new LeaInsertSorter()},
         {name: 'SelectionSorter', instance: new SelectionSorter()},
         {name: 'InsertionSorter', instance: new InsertionSorter()},
         {name: 'BucketSorter', instance: new BucketSorter()},
