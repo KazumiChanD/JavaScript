@@ -24,4 +24,4 @@ import {Sorter} from "./Sorter.js";
 export class IrgendeinName extends Sorter {
     _runAlgorithm() {
 ```
-+ die Variable ist mit **_this._itemsToSort;_** aufrufbar
++ das Array ist mit **_this._itemsToSort;_** aufrufbar
