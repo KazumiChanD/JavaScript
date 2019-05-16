@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="213px" preserveAspectRatio="none" style="width:398px;height:213px;" version="1.1" viewBox="0 0 398 213" width="398px" zoomAndPan="magnify"><defs><filter height="300%" id="fz2kjrmgqu9ii" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Client--><rect fill="#FEFECE" filter="url(#fz2kjrmgqu9ii)" height="24.1328" id="Client" style="stroke: #A80036; stroke-width: 1.5;" width="38" x="85" y="26.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="32" x="88" y="43.1016">Client</text><!--class Target--><rect fill="#FEFECE" filter="url(#fz2kjrmgqu9ii)" height="60.9551" id="Target" style="stroke: #A80036; stroke-width: 1.5;" width="75" x="158.5" y="8"/><ellipse cx="175.75" cy="24" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M171.6777,19.7651 L171.6777,17.6069 L179.0571,17.6069 L179.0571,19.7651 L176.5918,19.7651 L176.5918,27.8418 L179.0571,27.8418 L179.0571,30 L171.6777,30 L171.6777,27.8418 L174.1431,27.8418 L174.1431,19.7651 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="38" x="190.25" y="28.5352">Target</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="159.5" x2="232.5" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="159.5" x2="232.5" y1="48" y2="48"/><ellipse cx="169.5" cy="59.9775" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="178.5" y="62.6348">request()</text><!--class Adapter--><rect fill="#FEFECE" filter="url(#fz2kjrmgqu9ii)" height="73.9102" id="Adapter" style="stroke: #A80036; stroke-width: 1.5;" width="118" x="203" y="129"/><ellipse cx="235.55" cy="145" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M238.5231,150.6431 Q237.9421,150.9419 237.3029,151.0913 Q236.6638,151.2407 235.9582,151.2407 Q233.4514,151.2407 232.1315,149.5889 Q230.8117,147.937 230.8117,144.8159 Q230.8117,141.6865 232.1315,140.0347 Q233.4514,138.3828 235.9582,138.3828 Q236.6638,138.3828 237.3112,138.5322 Q237.9587,138.6816 238.5231,138.9805 L238.5231,141.7031 Q237.8923,141.1221 237.2988,140.8523 Q236.7053,140.5825 236.0744,140.5825 Q234.7297,140.5825 234.0449,141.6492 Q233.3601,142.7158 233.3601,144.8159 Q233.3601,146.9077 234.0449,147.9744 Q234.7297,149.041 236.0744,149.041 Q236.7053,149.041 237.2988,148.7712 Q237.8923,148.5015 238.5231,147.9204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="47" x="253.45" y="149.5352">Adapter</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="204" x2="320" y1="161" y2="161"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="204" x2="320" y1="169" y2="169"/><ellipse cx="214" cy="180.9775" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="223" y="183.6348">request()</text><ellipse cx="214" cy="193.9326" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="92" x="223" y="196.5898">specificRequest()</text><path d="M6,148.5 L6,173.8105 A0,0 0 0 0 6,173.8105 L168,173.8105 A0,0 0 0 0 168,173.8105 L168,166.5 L207,179.4775 L168,158.5 L168,158.5 L158,148.5 L6,148.5 A0,0 0 0 0 6,148.5 " fill="#FBFB77" filter="url(#fz2kjrmgqu9ii)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M158,148.5 L158,158.5 L168,158.5 L158,148.5 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="141" x="12" y="166.0684">this-&gt;specificRequest</text><!--class Adaptee--><rect fill="#FEFECE" filter="url(#fz2kjrmgqu9ii)" height="60.9551" id="Adaptee" style="stroke: #A80036; stroke-width: 1.5;" width="118" x="269" y="8"/><ellipse cx="300.65" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M303.6231,29.6431 Q303.0421,29.9419 302.4029,30.0913 Q301.7638,30.2407 301.0582,30.2407 Q298.5514,30.2407 297.2315,28.5889 Q295.9117,26.937 295.9117,23.8159 Q295.9117,20.6865 297.2315,19.0347 Q298.5514,17.3828 301.0582,17.3828 Q301.7638,17.3828 302.4112,17.5322 Q303.0587,17.6816 303.6231,17.9805 L303.6231,20.7031 Q302.9923,20.1221 302.3988,19.8523 Q301.8053,19.5825 301.1744,19.5825 Q299.8297,19.5825 299.1449,20.6492 Q298.4601,21.7158 298.4601,23.8159 Q298.4601,25.9077 299.1449,26.9744 Q299.8297,28.041 301.1744,28.041 Q301.8053,28.041 302.3988,27.7712 Q302.9923,27.5015 303.6231,26.9204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="49" x="318.35" y="28.5352">Adaptee</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="270" x2="386" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="270" x2="386" y1="48" y2="48"/><ellipse cx="280" cy="59.9775" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="92" x="289" y="62.6348">specificRequest()</text><!--link Target to Adapter--><path d="M221.1354,87.0569 C228.316,100.9286 236.0242,115.8194 242.7895,128.8888 " fill="none" id="Target-Adapter" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="214.7863,90.0188,211.8086,69.0394,227.2193,83.5829,214.7863,90.0188" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Adapter$$$LEFT to Adapter--><!--link Adaptee to Adapter--><path d="M302.8646,87.0569 C295.684,100.9286 287.9758,115.8194 281.2105,128.8888 " fill="none" id="Adaptee-Adapter" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="296.7807,83.5829,312.1914,69.0394,309.2137,90.0188,296.7807,83.5829" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Client to Target--><path d="M123.0469,38.5 C133.0773,38.5 143.1078,38.5 153.1383,38.5 " fill="none" id="Client-Target" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="158.3835,38.5,149.3835,34.5,153.3835,38.5,149.3835,42.5,158.3835,38.5" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+hide Client circle
+hide Client member
+
+interface Target {
+    + request()
+}
+
+class Adapter implements Target {
+    + request()
+    + specificRequest()
+}
+
+note left of Adapter::request
+this->specificRequest
+endnote
+
+class Adaptee {
+    + specificRequest()
+}
+
+Adaptee <|- - Adapter
+Client -> Target
+
+@enduml
+
+PlantUML version 1.2018.09(Fri Jul 27 18:58:18 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b8
+Operating System: Mac OS X
+OS Version: 10.13.6
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>

@@ -1,0 +1,26 @@
+@startuml
+(*) -right-> if "1" then
+    -right-> [true] "2"
+else 
+    -->[false] "3"
+endif
+
+"2" --> (*)
+"3" -right-> "4,5"
+
+-right-> if "6" then
+    -right->[Keys] "7"
+    if "8" then
+        -->[true] "9"
+        "9" --> "12"
+    else
+        -right->[false] "10"
+        "10" --> "12"
+    endif
+else
+    -->[no Keys] "11"
+endif
+--> "12"
+--> (*)
+
+@enduml

@@ -1,0 +1,19 @@
+Stack trace:
+#0 latex/xDebug/Quellen/stack-trace.php(24): foo(Array)
+#1 {main}
+  thrown in latex/xDebug/Quellen/stack-trace.php on line 11
+
+Fatal error: Uncaught RuntimeException: a word in latex/xDebug/Quellen/stack-trace.php on line 11
+
+RuntimeException: a word in latex/xDebug/Quellen/stack-trace.php on line 11
+
+Call Stack:
+    0.0008     358432   1. {main}() latex/xDebug/Quellen/stack-trace.php:0
+    0.0020     360232   2. foo($array = array (42 => FALSE, 'foo' => 912124, 43 => class stdClass { public $bar = 100 }, 44 => resource(5) of type (stream))) latex/xDebug/Quellen/stack-trace.php:24
+
+Dump $_SERVER
+   $_SERVER['PWD'] = 'latex/xDebug/Quellen'
+
+Variables in local scope (#2):
+  $array = array (42 => FALSE, 'foo' => 912124, 43 => class stdClass { public $bar = 100 }, 44 => resource(5) of type (stream))
+  $word = 'a word'

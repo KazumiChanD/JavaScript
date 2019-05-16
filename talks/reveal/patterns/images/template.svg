@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="249px" preserveAspectRatio="none" style="width:269px;height:249px;" version="1.1" viewBox="0 0 269 249" width="269px" zoomAndPan="magnify"><defs><filter height="300%" id="frcv0e0s25mqe" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class AbstractClass--><rect fill="#FEFECE" filter="url(#frcv0e0s25mqe)" height="86.8652" id="AbstractClass" style="stroke: #A80036; stroke-width: 1.5;" width="120" x="138.5" y="13"/><ellipse cx="158" cy="29" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M158.1133,24.3481 L156.9595,29.4199 L159.2754,29.4199 Z M156.6191,22.1069 L159.6157,22.1069 L162.9609,34.5 L160.5122,34.5 L159.7485,31.437 L156.4697,31.437 L155.7227,34.5 L153.2739,34.5 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="78" x="173" y="33.5352">AbstractClass</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="139.5" x2="257.5" y1="45" y2="45"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="139.5" x2="257.5" y1="53" y2="53"/><ellipse cx="149.5" cy="64.9775" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="158.5" y="67.6348">templateMethod()</text><ellipse cx="149.5" cy="77.9326" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="67" x="158.5" y="80.5898">operation1()</text><ellipse cx="149.5" cy="90.8877" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="67" x="158.5" y="93.5449">operation2()</text><path d="M6,8 L6,94.5527 A0,0 0 0 0 6,94.5527 L103,94.5527 A0,0 0 0 0 103,94.5527 L103,55.2764 L142.5,63.4775 L103,47.2764 L103,18 L93,8 L6,8 A0,0 0 0 0 6,8 " fill="#FBFB77" filter="url(#frcv0e0s25mqe)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M93,8 L93,18 L103,18 L93,8 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="20" x="12" y="25.5684">[...]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="76" x="12" y="40.8789">operation1()</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="20" x="12" y="56.1895">[...]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="76" x="12" y="71.5">operation2()</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="20" x="12" y="86.8105">[...]</text><!--class ConcreteClass--><rect fill="#FEFECE" filter="url(#frcv0e0s25mqe)" height="73.9102" id="ConcreteClass" style="stroke: #A80036; stroke-width: 1.5;" width="113" x="142" y="165"/><ellipse cx="157" cy="181" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M159.9731,186.6431 Q159.3921,186.9419 158.7529,187.0913 Q158.1138,187.2407 157.4082,187.2407 Q154.9014,187.2407 153.5815,185.5889 Q152.2617,183.937 152.2617,180.8159 Q152.2617,177.6865 153.5815,176.0347 Q154.9014,174.3828 157.4082,174.3828 Q158.1138,174.3828 158.7612,174.5322 Q159.4087,174.6816 159.9731,174.9805 L159.9731,177.7031 Q159.3423,177.1221 158.7488,176.8523 Q158.1553,176.5825 157.5244,176.5825 Q156.1797,176.5825 155.4949,177.6492 Q154.8101,178.7158 154.8101,180.8159 Q154.8101,182.9077 155.4949,183.9744 Q156.1797,185.041 157.5244,185.041 Q158.1553,185.041 158.7488,184.7712 Q159.3423,184.5015 159.9731,183.9204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="81" x="171" y="185.5352">ConcreteClass</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="143" x2="254" y1="197" y2="197"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="143" x2="254" y1="205" y2="205"/><ellipse cx="153" cy="216.9775" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="67" x="162" y="219.6348">operation1()</text><ellipse cx="153" cy="229.9326" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="67" x="162" y="232.5898">operation2()</text><!--link AbstractClass$$$LEFT to AbstractClass--><!--link AbstractClass to ConcreteClass--><path d="M198.5,120.2963 C198.5,135.4938 198.5,151.2205 198.5,164.7692 " fill="none" id="AbstractClass-ConcreteClass" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="191.5001,120.1548,198.5,100.1548,205.5001,120.1548,191.5001,120.1548" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+
+abstract class AbstractClass{
+    + templateMethod()
+    + {abstract} operation1()
+    + {abstract} operation2()
+}
+
+note left of AbstractClass::templateMethod
+[...]
+operation1()
+[...]
+operation2()
+[...]
+endnote
+
+class ConcreteClass extends AbstractClass{
+    +operation1()
+    +operation2()
+}
+
+@enduml
+
+PlantUML version 1.2018.09(Fri Jul 27 18:58:18 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b8
+Operating System: Mac OS X
+OS Version: 10.13.6
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>

@@ -1,0 +1,137 @@
+@startuml
+
+hide circle
+hide methods
+hide members
+
+together {
+    class Client1
+    class Client2
+    class Client3
+}
+
+GenericWebshop.Fulfillment -- Client1
+GenericWebshop.Billing -- Client1
+GenericWebshop.Billing -- Client2
+GenericWebshop.Shipping -- Client2
+GenericWebshop.Shipping -- Client3
+GenericWebshop.Marketing -- Client3
+GenericWebshop.BusinessIntelligence -- Client3
+
+namespace GenericWebshop #DDDDDD {
+    Billing -- Fulfillment
+    Finance -- BusinessIntelligence
+
+    InformationTechnology -- Billing
+    InformationTechnology -- Fulfillment
+    InformationTechnology -- Finance
+    InformationTechnology -- Shipping
+    InformationTechnology -- Marketing
+}
+@enduml
+
+@startuml
+
+hide circle
+hide methods
+hide members
+
+class Client1
+class GenericWebshop.CustomerService
+
+GenericWebshop.CustomerService -- Client1
+GenericWebshop.CustomerService -- Client2
+GenericWebshop.CustomerService -- Client3
+
+namespace GenericWebshop #DDDDDD {
+    Fulfillment -- CustomerService
+    Billing -- CustomerService
+    Shipping -- CustomerService
+    Marketing -- CustomerService
+    BusinessIntelligence -- CustomerService
+
+    Billing -- Fulfillment
+    Finance -- BusinessIntelligence
+
+    InformationTechnology -- Billing
+    InformationTechnology -- Fulfillment
+    InformationTechnology -- Finance
+    InformationTechnology -- Shipping
+    InformationTechnology -- Marketing
+}
+@enduml
+
+
+@startuml
+hide circle
+hide Client members
+
+skinparam linetype ortho
+
+class Client
+
+class System.Facade {
+    create()
+    read()
+    update()
+    delete()
+}
+
+class System.Creater {
+    create()
+}
+
+class System.Reader {
+    read()
+}
+
+class System.Updater {
+    update()
+}
+
+class System.Deleter {
+    delete()
+}
+
+note left of System.Facade::create()
+    function create () {
+        $this->creater->create()
+    }
+end note
+
+namespace System #DDDDDD {
+    Facade <-- .Client
+    Creater <-- Facade
+    Reader <-- Facade
+    Updater <-- Facade
+    Deleter <-- Facade
+}
+
+@enduml
+
+@startuml
+
+class Pilot {
+    + fliegeZuZiel(Ziel)
+}
+
+class Triebwerk {
+    + beschleunigeFlugzeug()
+    + drosselklappenWarten()
+}
+
+class Höhenruder {
+    + neigeFlugzeug()
+    + wartungsklappeEntfernen()
+}
+
+class Funk {
+    + starterlaubnisEinholen()
+    + landeerlaubnisEinholen()
+    + antenneErsetzen()
+}
+
+Triebwerk <-- Pilot
+Höhenruder <-- Pilot
+Funk <-- Pilot
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+:Start;
+if (1) then (true)
+    :2;
+    stop
+else (false)
+    :3;
+endif
+:4,5;
+if (6) then (Keys)
+    :7;
+    if (8) then (true)
+        :9;
+    else (false)
+        :10;
+    endif
+else (no keys)
+    :11;
+endif
+:12;
+stop
+@enduml

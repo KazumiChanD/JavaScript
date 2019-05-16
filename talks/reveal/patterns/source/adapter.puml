@@ -1,0 +1,204 @@
+@startuml
+hide Client circle
+hide Client member
+
+skinparam linetype ortho
+
+
+namespace CurrentSystem #DDDDDD {
+    Class LegacyRectangle implements Shape {
+    }
+
+    interface Shape {
+        + display(int x, int y, int width, int height)
+    }
+}
+
+class Rectangle{
+   + render(Coord topLeft, Coord bottomRight)
+}
+
+note bottom of Rectangle
+    New Class to integrate
+    into the current system
+endnote
+
+
+
+Client -right-> CurrentSystem.Shape
+
+@enduml
+
+
+@startuml
+hide Client circle
+hide Client member
+
+interface Target {
+    + request()
+}
+
+class Adapter implements Target {
+    + request()
+    + specificRequest()
+}
+
+note left of Adapter::request
+this->specificRequest
+endnote
+
+class Adaptee {
+    + specificRequest()
+}
+
+Adaptee <|-- Adapter
+Client -> Target
+
+@enduml
+
+
+@startuml
+hide Client circle
+hide Client member
+
+class Target {
+    + request()
+}
+
+class Adapter extends Target {
+    + request()
+}
+
+note left of Adapter::request
+adaptee->specificRequest
+endnote
+
+class Adaptee {
+    + specificRequest()
+}
+
+Adaptee "adaptee" <-- Adapter
+Client -> Target
+
+@enduml
+
+
+@startuml
+hide Client circle
+hide Client member
+
+skinparam linetype ortho
+
+class Shape <<Target>>{
+    + display(int x, int y, int width, int height)
+}
+
+
+class Rectangle <<Adaptee>>{
+   + render(Coord topLeft, Coord bottomRight)
+}
+
+class RectangleAdapter <<Adapter>> extends Shape{
+   + display(int x, int y, int width, int height)
+}
+
+Class LegacyRectangle implements Shape {
+}
+
+note left of RectangleAdapter::display
+    topLeft = new Coord(x,y)
+    bottomRight = new Coord(x+width,y+width)
+    rectangle.render(topLeft, bottomRight)
+endnote
+
+Rectangle "rectangle" <-- RectangleAdapter
+Client -down-> Shape
+
+
+@enduml
+
+@startuml
+hide Client circle
+hide Client member
+
+skinparam linetype ortho
+
+interface Shape <<Target>>{
+    + display(int x, int y, int width, int height)
+}
+
+
+class Rectangle <<Adaptee>>{
+   + render(Coord topLeft, Coord bottomRight)
+}
+
+class RectangleAdapter <<Adapter>> implements Shape{
+   + display(int x, int y, int width, int height)
+   + render(Coord topLeft, Coord bottomRight)
+}
+
+Class LegacyRectangle implements Shape {
+}
+
+note left of RectangleAdapter::display
+    topLeft = new Coord(x,y)
+    bottomRight = new Coord(x+width,y+width)
+    this.render(topLeft, bottomRight)
+endnote
+
+Rectangle <|-- RectangleAdapter
+
+Client --> Shape
+
+@enduml
+
+@startuml
+hide Client circle
+hide Client member
+
+
+together {
+    namespace CurrentSystem #DDDDDD {
+        interface Car{
+            + driveToDestination(Destination dest)
+            + refuelCar(Fuel fuel)
+        }
+
+        Class LegacyOttoMotorCar implements Car{
+        }
+
+        Class Destination{
+            + getXCoordinate()
+            + getYCoordinate()
+        }
+        interface Fuel {
+            + getOctane()
+            + getEnergy()
+            + getVolumePerEnergy()
+        }
+
+        class LegacyGas implements Fuel{
+        }
+        Car .right.> Fuel
+        Car ..> Destination
+    }
+
+    namespace NewSystem #DDDDDD {
+        class Battery{
+            + getPower()
+            + getCharge()
+        }
+
+        Class ElectricCar{
+            + driveToDestination(int x, inty)
+            + chargeBattery(Battery charge)
+        }
+
+        ElectricCar ..> Battery
+    }
+}
+
+Client --> CurrentSystem.Car
+Client --> CurrentSystem.Fuel
+
+@enduml

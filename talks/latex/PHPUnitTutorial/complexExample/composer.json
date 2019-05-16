@@ -1,0 +1,16 @@
+{
+  "require": {
+    "php-di/php-di": "^6.0",
+    "doctrine/annotations": "^1.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.5",
+    "mockery/mockery": "^1"
+  },
+  "autoload": {
+    "psr-4": {
+      "ExampleProject\\": "src",
+      "ExampleProject\\Tests\\": "tests"
+    }
+  }
+}

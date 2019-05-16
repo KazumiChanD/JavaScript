@@ -1,0 +1,164 @@
+@startuml
+
+skinparam noteFontName Monaco
+
+class TCPConnection {
+    - state : string
+    - socket : sting
+    - errorMessage : string
+    --
+    + open()
+    + close()
+    ..
+    + getId()
+}
+
+
+note left of TCPConnection::open()
+    if (state === 'open'
+        && socket !== null
+        && errorMessage === null)
+            throw Exception ('Already open');
+
+    elseif (state === 'closed'
+        && socket === null
+        && errorMessage === null)
+            socket = open(socket);
+            state = 'open';
+
+    elseif (state === 'closed'
+        && socket !== null
+        && errorMessage === null)
+            socket = open(socket);
+            state = 'open';
+    [...]
+    elseif (state === 'error'
+        && socket !== null
+        && errorMessage !== null)
+            throw Exception (errorMessage);
+    )
+endnote
+
+@enduml
+
+@startuml
+
+skinparam noteFontName Monaco
+
+class Context {
+    - state : State
+    + request()
+}
+
+together {
+    interface State {
+        + handle()
+    }
+
+    class ConcreteState implements State{
+        + handle()
+    }
+}
+
+note left of Context::request
+    state->handle()
+end note
+
+
+Context o-left-> State
+
+@enduml
+
+
+@startuml
+
+skinparam noteFontName Monaco
+
+class TCPConnection {
+    - state : TCPState
+    --
+    + open()
+    + close()
+    ..
+    + getId()
+}
+
+
+interface TCPState {
+    + open() : TCPState
+    + close()
+}
+
+together {
+    class TCPEstablished implements TCPState {
+        - socket : string
+        + open()
+        + close()
+    }
+
+    class TCPClosed implements TCPState {
+        + open()
+        + close()
+    }
+
+    class TCPError implements TCPState {
+        - errorMessage : string
+        + open()
+        + close()
+    }
+}
+
+note left of TCPConnection::open()
+    state->open()
+endnote
+
+note right of TCPEstablished::open()
+Already Established
+endnote
+
+note right of TCPEstablished::close()
+    socket->close()
+endnote
+
+TCPState <-right-o TCPConnection
+
+@enduml
+
+@startuml
+
+class Television {
+    - power : bool
+    - channel : int
+    - renderChannel(int) : stream
+    + changeChannel(int) : stream
+    + setPower(bool)
+    + getCurrentStream() : stream
+}
+
+@enduml
+
+@startuml
+
+class Television {
+    - state : State
+    - renderChannel(int) : stream
+    + changeChannel(int) : stream
+    + setPower(bool)
+    + getCurrentStream() : stream
+}
+
+interface State {
+    + getChannel() : int
+    + setChannel()
+}
+
+class PowerOn implements State{
+    - channel : int
+}
+
+class PowerOff implements State{
+}
+
+Television *-right-> State
+
+@enduml

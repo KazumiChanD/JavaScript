@@ -1,0 +1,17 @@
+@startuml
+
+class BigParentClass {
+    # doesEveryThing()
+}
+
+class ChildClass {
+    + doesOneThing()
+}
+
+BigParentClass <|-- ChildClass
+
+note left of ChildClass
+Subject
+end note
+
+@enduml

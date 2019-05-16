@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="128px" preserveAspectRatio="none" style="width:163px;height:128px;" version="1.1" viewBox="0 0 163 128" width="163px" zoomAndPan="magnify"><defs><filter height="300%" id="foinh8gho4y04" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Original--><rect fill="#FEFECE" filter="url(#foinh8gho4y04)" height="24.1328" id="Original" style="stroke: #A80036; stroke-width: 1.5;" width="50" x="102.5" y="8"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="44" x="105.5" y="24.6016">Original</text><!--class Mock--><rect fill="#FEFECE" filter="url(#foinh8gho4y04)" height="24.1328" id="Mock" style="stroke: #A80036; stroke-width: 1.5;" width="36" x="109.5" y="93"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="30" x="112.5" y="109.6016">Mock</text><!--class Test--><rect fill="#FEFECE" filter="url(#foinh8gho4y04)" height="24.1328" id="Test" style="stroke: #A80036; stroke-width: 1.5;" width="31" x="6" y="93"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="25" x="9" y="109.6016">Test</text><!--link Original to Mock--><path d="M127.5,52.4296 C127.5,66.5799 127.5,82.3107 127.5,92.8442 " fill="none" id="Original-Mock" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="120.5001,52.1785,127.5,32.1784,134.5001,52.1784,120.5001,52.1785" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Test to Mock--><path d="M37.1407,105 C54.7976,105 83.7102,105 104.0663,105 " fill="none" id="Test-Mock" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="109.3043,105,100.3043,101,104.3043,105,100.3043,109,109.3043,105" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="36" x="55.25" y="98.5684">«use»</text><!--
+@startuml
+hide circle
+hide members
+
+class Original
+class Mock
+class Test
+
+Original <|- - Mock
+Mock <.right. Test : <<use>>
+
+@enduml
+
+PlantUML version 1.2018.09(Fri Jul 27 18:58:18 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b8
+Operating System: Mac OS X
+OS Version: 10.13.6
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>

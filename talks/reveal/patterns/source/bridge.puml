@@ -1,0 +1,123 @@
+@startuml
+hide member
+
+Auto <|-- Coupe
+Auto <|-- Kombi
+Auto <|-- Limousine
+
+@enduml
+
+
+@startuml
+hide member
+
+Auto <|-- Coupe
+Auto <|-- Kombi
+Auto <|-- Limousine
+
+
+
+Coupe <|-- BenzinCoupe
+Coupe <|-- DieselCoupe
+
+Kombi <|-- BenzinKombi
+Kombi <|-- DieselKombi
+
+Limousine <|-- BenzinLimousine
+Limousine <|-- DieselLimousine
+
+@enduml
+
+
+@startuml
+hide member
+
+
+Auto <|-- Coupe
+Auto <|-- Kombi
+Auto <|-- Limousine
+
+Coupe <|-- BenzinCoupe
+Coupe <|-- DieselCoupe
+
+Kombi <|-- BenzinKombi
+Kombi <|-- DieselKombi
+
+Limousine <|-- BenzinLimousine
+Limousine <|-- DieselLimousine
+
+BenzinCoupe <|-- RechtsVerkehrBenzinCoupe
+BenzinCoupe <|-- LinksVerkehrBenzinCoupe
+
+DieselCoupe <|-- RechtsVerkehrDieselCoupe
+DieselCoupe <|-- LinksVerkehrDieselCoupe
+
+BenzinKombi <|-- RechtsVerkehrBenzinKombi
+BenzinKombi <|-- LinksVerkehrBenzinKombi
+
+DieselKombi <|-- RechtsVerkehrDieselKombi
+DieselKombi <|-- LinksVerkehrDieselKombi
+
+BenzinLimousine <|-- RechtsVerkehrBenzinLimousine
+BenzinLimousine <|-- LinksVerkehrBenzinLimousine
+
+DieselLimousine <|-- RechtsVerkehrDieselLimousine
+DieselLimousine <|-- LinksVerkehrDieselLimousine
+
+@enduml
+
+@startuml
+hide member
+
+skinparam linetype ortho
+
+abstract class Abstraction
+interface Implementor
+
+Abstraction <|-- RefinedAbstraction
+
+Implementor <|.. ConcreteImplementorA
+Implementor <|.. ConcreteImplementorB
+
+Abstraction -right-> Implementor
+
+@enduml
+
+@startuml
+hide member
+
+abstract class Auto <<Abstraction>>
+
+class Coupe <<RefinedAbs>> extends Auto
+class Kombi <<RefinedAbs>> extends Auto
+class Limousine <<RefinedAbs>> extends Auto
+
+interface TreibstoffInterface<<Implementor>>
+interface SteuerInterface<<Implementor>>
+
+Auto o-> "Treibstoff" TreibstoffInterface
+Auto o-left-> "Steuer" SteuerInterface
+
+class Benzin <<ConcreteImp>> implements TreibstoffInterface
+class Diesel <<ConcreteImp>> implements TreibstoffInterface
+
+class RechtsVerkehr <<ConcreteImp>> implements SteuerInterface
+class LinksVerkehr <<ConcreteImp>> implements SteuerInterface
+
+@enduml
+
+@startuml
+
+class Controller {
+    + buildResponse(Request) : Response
+}
+
+class EntityAwareController extends Controller
+class ContainerAwareController extends Controller
+class CacheableController extends Controller
+class EntityAndContainerAwareController extends EntityAwareController
+class CacheableEntityAndContainerAwareController extends CacheableController
+
+
+@enduml
+

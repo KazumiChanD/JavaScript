@@ -1,0 +1,726 @@
+\documentclass[10pt]{beamer}
+\usetheme[
+    progressstyle=movingCircCnt   % fixedCircCnt, movingCircCnt (moving is deault)
+  ]{Feather}
+
+
+%-------------------------------------------------------
+% INCLUDE PACKAGES
+%-------------------------------------------------------
+
+\usepackage{calc}
+\usepackage{tikz}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[default, osfigures]{opensans}
+\usepackage{verbatim}
+\usepackage{helvet}
+\usepackage{multirow}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{babel}
+\usepackage{etoolbox}
+\usepackage{ragged2e}
+\usepackage{listings}
+
+%-------------------------------------------------------
+% DEFFINING AND REDEFINING COMMANDS
+%-------------------------------------------------------
+
+\graphicspath{{Images/}}
+
+% colored hyperlinks
+\newcommand{\chref}[2]{
+  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
+}
+
+%Justification
+\addtobeamertemplate{theorem begin}{}{\justifying}
+\addtobeamertemplate{block begin}{}{\justifying}
+\addtobeamertemplate{itemize begin}{}{\justifying}
+\addtobeamertemplate{item begin}{}{\justifying}
+\addtobeamertemplate{frame begin}{}{\justifying}
+\addtobeamertemplate{structure begin}{}{\justifying}
+
+%etoolbox für nested list covering
+\setbeamercovered{transparent}
+
+%description inde
+\setbeamersize{description width=0.57cm}
+
+\makeatletter
+\newcommand*\fix@beamer@close{%
+  \ifnum\beamer@trivlistdepth>0
+  \beamer@closeitem
+  \fi
+}
+\newcommand*\fix@beamer@open{%
+  \ifnum\beamer@trivlistdepth>0
+  \gdef\beamer@closeitem{}%
+  \fi
+}
+\newcommand<>{\highlighton}[1]{%
+  \alt#2{\structure{#1}}{{#1}}
+}
+\BeforeBeginEnvironment{enumerate}{\fix@beamer@close}
+\AfterEndEnvironment{enumerate}{\fix@beamer@open}
+\BeforeBeginEnvironment{itemize}{\fix@beamer@close}
+\AfterEndEnvironment{itemize}{\fix@beamer@open}
+\BeforeBeginEnvironment{description}{\fix@beamer@close}
+\AfterEndEnvironment{description}{\fix@beamer@open}
+\makeatother
+
+% Codelistings
+\lstset{language=PHP,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue},
+	stringstyle=\color{red},
+	commentstyle=\color{gray},
+	breaklines=true,
+	tabsize=2
+}
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+
+\title[Entwurfsmuster ] % [] is optional - is placed on the bottom of the sidebar on every slide
+{ % is placed on the title page
+      \textbf{Entwurfsmuster}
+}
+
+\subtitle[ -- Allgemeine Lösungen für bekannte Probleme]
+{
+      \textbf{Allgemeine Lösungen für bekannte Probleme}
+}
+
+\author[Sebastian Knott]{Sebastian Knott}
+
+\institute[]
+{
+      SH Telekommunikation \\
+      Deutschland GmbH -- IT\\
+  
+  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
+}
+
+\date{\today}
+
+%-------------------------------------------------------
+% THE TITLE OF THE PRESENTATION
+%-------------------------------------------------------
+
+\begin{document}
+\pdfminorversion=5
+\pdfcompresslevel=9
+\pdfobjcompresslevel=2
+
+{\1
+\begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page, noframenumbering removes the numbering of this frame only
+  \titlepage % call the title page information from above
+\end{frame}}
+
+% \AtBeginSection[]
+% {
+%   \frame<handout:0>
+%   {
+%     \frametitle{Überblick}
+%     \tableofcontents[currentsection,hideothersubsections,sectionstyle=show/shaded,subsectionstyle=show/shaded]
+%   }
+% }
+
+\AtBeginSubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{ÜBERBLICK}
+    \tableofcontents[currentsection,hideothersubsections,sectionstyle=show/shaded,subsectionstyle=show/shaded]
+  }
+}
+
+\AtBeginSubsubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{ÜBERBLICK}
+    \tableofcontents[currentsection,hideothersubsections,sectionstyle=show/shaded,subsectionstyle=show/shaded,subsubsectionstyle=show/shaded]
+  }
+}
+
+%-------------------------------------------------------
+% THE BODY OF THE PRESENTATION
+%-------------------------------------------------------
+
+\begin{frame}
+  \frametitle{ÜBERBLICK}
+  \tableofcontents[currentsection,sectionstyle=show,subsectionstyle=show,subsubsectionstyle=hide]
+\end{frame}
+  
+
+\section{Grundlagen}
+
+\subsection{Was sind Patterns}
+
+
+\begin{frame}
+  \frametitle{GRUNDIDEE}
+  \framesubtitle{Grundidee von Pattern}
+  
+	\begin{block}{Grundidee}
+		\begin{itemize}
+			\item<+-> Alle Ingenieurdisziplinen benötigen eine \structure{Terminologie} ihrer wesentlichen Konzepte sowie eine \structure{Sprache}, die diese Konzepte in Beziehung setzt
+			\item<+-> \structure{Pattern} (Muster) wurden zuerst im Bereich der Architektur beschrieben
+		\end{itemize}
+	\end{block}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{GRUNDIDEE}
+\framesubtitle{Ziel von Pattern}
+
+	\begin{block}{Ziel von Pattern in der Welt der Software}
+		\begin{itemize}
+			\item<+-> \structure{Dokumentation} von Lösungen wiederkehrender Probleme, um
+			Programmierer bei der Softwareentwicklung zu unterstützen
+			\item<+-> Schaffung einer \structure{gemeinsamen Sprache}, um über Probleme und ihre
+			Lösungen zu sprechen
+			\item<+-> Bereitstellung eines standardisierten Katalogisierungsschemas um
+			\structure{erfolgreiche Lösungen} aufzuzeichnen
+		\end{itemize}
+	\end{block}
+
+	\begin{alertblock}{Aber...}<+->
+		Bei Pattern handelt es sich \structure{nicht} um eine Technologie (wie z.B. bei
+		UML), sondern um eine Kultur der Dokumentation und Unterstützung guter
+		Softwarearchitektur.
+	\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}[label=fragenfolie]
+	\frametitle{Fragen}
+	\framesubtitle{Vision}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[height=4cm]{fragen}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+\section{Pattern}
+\subsection{Facade-Pattern}
+
+
+\begin{frame}
+	\frametitle{Facade-Pattern}
+	\framesubtitle{Absicht des Patterns}
+
+	\begin{block}{Absicht}
+		\begin{itemize}
+			\item<+-> Bereitstellung eines \structure{einheitlichen Interfaces} für die verschiedenen Interfaces eines Subsystems
+			\item<+-> \structure{Vereinfachung} eines Interfaces eines Subsystems für einen bestimmten Zweck
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Facade-Pattern}
+	\framesubtitle{Beispiel}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[height=6.5cm]{facade-example}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Facade-Pattern}
+\framesubtitle{Struktur des Patterns}
+\begin{figure}
+	\begin{center}
+		\includegraphics[height=6.5cm]{facade}
+	\end{center}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Facade-Pattern}
+	\framesubtitle{Checkliste zur Implementierung des Patterns}
+	
+	\begin{enumerate}
+		\item<+-> \structure{Planung} eines simpleren Interfaces für ein Subsystem
+		\item<+-> Schreiben einer \structure{Wrapper-Klasse} um das Subsystem
+		\item<+-> Alle benötigten Interaktionen mit dem Subsystem im Wrapper \structure{zusammenfassen}. Der \structure{Wrapper delegiert die Aufrufe} an die entsprechenden Methoden des Subsystems
+		\item<+-> Alle Clients werden auf den Wrapper umgestellt
+	\end{enumerate}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Facade-Pattern}
+	\framesubtitle{Folgen des Patterns}
+
+	\begin{block}{Folge}<+->
+		\begin{itemize}
+			\item Reduziert die Anzahl von Objekten die gehandhabt werden müssen
+			\item<+-> Fördert lose Kopplung
+			\item<+-> Verhindert nicht, dass Anwendungen direkt	Subsystemklassen verwenden können
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}[label=fragenfolie]
+	\frametitle{Fragen}
+	\framesubtitle{Vision}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[height=4cm]{fragen}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+\subsection{Strategy-Pattern}
+
+
+\begin{frame}
+	\frametitle{Strategy-Pattern}
+	\framesubtitle{Absicht des Patterns}
+	
+	\begin{block}{Absicht}
+		\begin{itemize}
+			\item<+-> Definiert Familie von Algorithmen, kapselt alle und mache sie austauschbar
+			\item<+-> Ermöglicht es den Algorithmus unabhängig von nutzenden Klienten zu variieren
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Strategy-Pattern}
+	\framesubtitle{Beispiel des Patterns}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[height=6.5cm]{strategy-example}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Strategy-Pattern}
+	\framesubtitle{Struktur des Patterns}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=\textwidth]{strategy}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Strategy-Pattern}
+	\framesubtitle{Checkliste zur Implementierung des Patterns}
+	
+	\begin{enumerate}
+		\item<+-> Identifiziere eine Menge von Algorithmen zwischen denen ein Client umschalten möchte
+		\item<+-> Spezifizieren der Signaturen der Algorithmen in einem Interface
+		\item<+-> Implementieren der Algorithmen in Klassen, die das Interface implementieren
+		\item<+-> Alle Clients haben nur Referenzen auf das Interface
+	\end{enumerate}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Strategy-Pattern}
+	\framesubtitle{Folgen des Patterns}
+	
+	\begin{block}{Folge}<+->
+		\begin{itemize}
+			\item Alternative führt zu einer Unterklassenbildung
+			\item<+-> Erhöht Klassenanzahl
+			\item<+-> Strategien entfernen Bedingungsanweisungen
+			\item<+-> Klienten müssen Strategien kennen
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\againframe<1>{fragenfolie}
+
+
+\subsection{Composite-Pattern}
+
+
+\begin{frame}
+	\frametitle{Composite-Pattern}
+	\framesubtitle{Absicht des Patterns}
+	
+	\begin{block}{Absicht}
+		\begin{itemize}
+			\item<+-> \structure{Baumartige} Verwaltung von Objekten
+			\item<+-> \structure{Einheitliche Behandlung} sowohl von einzelne Objekten wie auch Kompositionen
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Composite-Pattern}
+	\framesubtitle{Beispiel des Patterns}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[height=6.5cm]{composite-example}
+		\end{center}
+		$2 + (3 * 5)$
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Composite-Pattern}
+	\framesubtitle{Struktur des Patterns}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=\textwidth]{composite}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Composite-Pattern}
+	\framesubtitle{Checkliste zur Implementierung des Patterns}
+	
+	\begin{enumerate}
+		\item<+-> Sicherstellen, dass eine \structure{hierarchische Struktur} vorliegt 
+		\item<+-> Sicherstellen, dass diese \structure{Struktur baumförmig} ist -- also aus inneren Knoten und Blättern besteht
+		\item<+-> \structure{Gemeinsames Interface} für innere Knoten und Blätter definieren
+		\item<+-> Alle innere Knoten und Blätter das \structure{Interface implementieren} lassen
+		\item<+-> Allen inneren Knoten ermöglichen \structure{Relationen zu Objekten} des Typs des Interfaces zu haben
+		\item<+-> Allen inneren Knoten nutzen in ihren Methoden, die sie aus dem Interface übernommen haben, die Methoden ihrer Kinder
+	\end{enumerate}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Composite-Pattern}
+	\framesubtitle{Folgen des Patterns}
+	
+	\begin{block}{Folge}<+->
+		\begin{itemize}
+			\item Primitive Objekte können zu komplexeren Objekten zusammen	gesetzt werden
+			\item<+-> Einfach neue Arten von Komponenten hinzuzufügen
+			\item<+-> Aufwand für den Klient wird nicht erhöht
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\againframe<1>{fragenfolie}
+
+
+\subsection{Object Pool-Pattern}
+
+
+\begin{frame}
+	\frametitle{Object Pool-Pattern}
+	\framesubtitle{Absicht des Patterns}
+	
+	\begin{block}{Absicht}
+		\begin{itemize}
+			\item<+-> \structure{Geschwindigkeit} eines Programms erhöhen, indem Klassen nicht mehrfach instantiiert werden müssen
+			\item<+-> \structure{Ersatz} des Singleton-Patterns
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Object Pool-Pattern}
+	\framesubtitle{Beispiel des Patterns}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[height=6.5cm]{object-pool-example}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Object Pool-Pattern}
+	\framesubtitle{Struktur des Patterns}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=\textwidth]{object-pool}
+		\end{center}
+	\end{figure}
+\begin{description}
+	\item[Reusable] Instanzen von Klassen, die mehrfach benutzt werden können
+	\item[Client] Klasse, die \lstinline|Reusable|s benutzen kann
+	\item[ReusablePool] Diese Klasse verwaltet die Instanzen von \lstinline|Reusable|
+\end{description}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Object Pool-Pattern}
+	\framesubtitle{Checkliste zur Implementierung des Patterns}
+	
+	\begin{enumerate}
+		\item<+-> Erzeugen eines \lstinline|ObjectPool| mit einem privaten Feld vom Typ \lstinline|stdClass[]|
+		\item<+-> Implementieren der Methoden zum beziehen und löschen von Objekten.
+		\item<+-> Sicherstellen, dass im ganzen Programm nur ein und die selbe Instanz von \lstinline|ObjectPool| genutzt wird
+	\end{enumerate}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Object Pool-Pattern}
+	\framesubtitle{Folgen des Patterns}
+	
+	\begin{block}{Folge}<+->
+		\begin{itemize}
+			\item Je nach Architektur deutlich weniger Instanzierungen von Klassen notwendig
+			\item<+-> Eine zentrale Verwaltung von Instanzen (Vereinfach Tests)
+			\item<+-> Beim Entwickeln muss der State eines \lstinline|Reusable| mit bedacht werden
+			\item<+-> Größe des \lstinline|ObjectPool| muss beachtet werden, da Instanzen durch den Garbage Collector nicht mehr abgebaut werden, obwohl sie nicht mehr aktiv genutzt werden
+			\item<+-> \lstinline|ObjectPool| macht Singletons überflüssig
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\againframe<1>{fragenfolie}
+
+
+\subsection{Factory Method-Pattern}
+
+
+\begin{frame}
+	\frametitle{Factory Method-Pattern}
+	\framesubtitle{Absicht des Patterns}
+	
+	\begin{block}{Absicht}
+		\begin{itemize}
+			\item<+-> Definiert ein Interface für die Instanziierung von Klassen
+			\item<+-> Entkoppelt den Klienten vollständig vom Konstruktionsprozess einer Klasse
+			\item<+-> Vermeiden des \lstinline|new|-Operators
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Factory Method-Pattern}
+	\framesubtitle{Beispiel des Patterns}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[height=5cm]{factory-method-example}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Factory Method-Pattern}
+	\framesubtitle{Struktur des Patterns}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=\textwidth]{factory-method}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Factory Method-Pattern}
+	\framesubtitle{Checkliste zur Implementierung des Patterns}
+	
+	\begin{enumerate}
+		\item<+-> Bestimme eine Menge von Klassen, die über Pholimorphie voneinander abhängen
+		\item<+-> Definiere eine statische Methode \lstinline|create()|in der Oberklasse aller Factories
+		\item<+-> Definiere die Menge an Parametern von \lstinline|create()|, die bestimmen welche konkrete Klasse instantiiert werden soll
+		\item<+-> Optional kann ein ObjectPool verwendet werden, um das doppelte Erzeugen von Klassen zu unterbinden
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Factory Method-Pattern}
+	\framesubtitle{Folgen des Patterns}
+	
+	\begin{block}{Folge}<+->
+		\begin{itemize}
+			\item Code wird abstrakter, strukturierter und wiederverwendbarer
+			\item<+-> Einführung von Subklassen die nur der	Objekterzeugung dienen
+			\item<+-> Es wird möglich in den Konstruktionsprozess einzugreifen
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\againframe<1>{fragenfolie}
+
+
+\subsection{Template Method-Pattern}
+
+
+\begin{frame}
+	\frametitle{Template Method-Pattern}
+	\framesubtitle{Absicht des Patterns}
+	
+	\begin{block}{Absicht}
+		\begin{itemize}
+			\item<+-> Definiere ein Skelett eines Algorithmus in Methoden und delegiere einzelne Schritte an Unterklassen
+			\item<+-> Unterklassen können ausgewählt Schritte eines Algorithmus' neu definieren
+			\item<+-> Eine Oberklasse definiert Platzhalter, welche von Unterklassen implementiert werden können
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Template Method-Pattern}
+	\framesubtitle{Beispiel des Patterns}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[height=6.5cm]{template-method-example}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Template Method-Pattern}
+	\framesubtitle{Struktur des Patterns}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[height=6.5cm]{template-method}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Template Method-Pattern}
+	\framesubtitle{Checkliste zur Implementierung des Patterns}
+	
+	\begin{enumerate}
+		\item<+-> Den Algorithmus in Operationen unterteilen, die standardmäßig oder nur in speziellen Situationen ausgeführt werden sollen
+		\item<+-> Definition einer abstrakten Basisklasse, welche die Standartteile in Methoden implementiert
+		\item<+-> Definition einer Platzhaltermethode für spezielles Verhalten
+		\item<+-> Rufe die Platzhaltermethoden in der abstrakten Klasse auf
+		\item<+-> Deklariere beliebig viele Kindklassen, die das spezielle Verhalten in ihren Methoden implementieren
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Template Method-Pattern}
+	\framesubtitle{Folgen des Patterns}
+	
+	\begin{block}{Folge}<+->
+		\begin{itemize}
+			\item Führt zu Inversion of Control
+			\item<+-> Teile von Klassen können einfach wiederverwendet werden
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\againframe<1>{fragenfolie}
+
+
+\section{Quellen}
+
+\begin{frame}
+\frametitle{Quellen}
+\framesubtitle{Literatur zu Pattern}
+
+	\begin{itemize}
+		\item Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides (Gang of Four):
+		\structure{"Design Patterns - Elements of Reusable Object-Oriented Software"}
+		Addison-Wesley, 1995
+		\item Frank Buschmann, Regine Meunier, Hans Rohnert, Peter Sommerlad, Michael Stal
+		(Gang of Five): \structure{"Pattern-Oriented Software Architecture - A System of Patterns"}
+		John Wiley \& Sons, 1996
+		\item Serge Demeyer, Stephane Ducasse, Oscar Nierstrasz:
+		\structure{"Object Oriented Reengineering Patterns"}, Morgan Kaufman, 2002
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Quellen}
+\framesubtitle{Webseiten zu Pattern}
+	
+	\begin{itemize}
+		\item Design Patterns Explained Simply:\\
+		\structure{\href{http://sourcemaking.com}{http://sourcemaking.com}}
+		\item Portland Pattern Repository:\\
+		\structure{\href{http://c2.com/ppr/}{http://c2.com/ppr/}}
+		\item Hillside Group Patterns Library:\\ \structure{\href{http://www.hillside.net/patterns/}{http://www.hillside.net/patterns/}}
+		\item Doug Lea, Patterns-Discussion FAQ,\\
+		\structure{\href{http://gee.oswego.ed}{http://gee.oswego.ed}}
+	\end{itemize}
+\end{frame}
+
+
+%-------------------------------------------------------
+% HELPER PAGES
+%-------------------------------------------------------
+
+
+\begin{frame}
+  \frametitle{Pause}
+  \framesubtitle{5 Minuten Pause}
+  \begin{figure}
+    \begin{center}
+      \includegraphics[height=4cm]{pause-5-min}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Pause}
+  \framesubtitle{10 Minuten Pause}
+  \begin{figure}
+    \begin{center}
+      \includegraphics[height=4cm]{pause-10-min}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Pause}
+  \framesubtitle{Pause}
+  \begin{figure}
+    \begin{center}
+      \includegraphics[height=4cm]{pause}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+
+
+\end{document}

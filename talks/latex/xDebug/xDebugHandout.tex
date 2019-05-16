@@ -1,0 +1,152 @@
+\documentclass[10pt,handout,hyperref={unicode}]{beamer}
+
+%-------------------------------------------------------
+% Beamer Theme location override
+%-------------------------------------------------------
+
+\makeatletter
+  \def\beamer@calltheme#1#2#3{%
+    \def\beamer@themelist{#2}
+    \@for\beamer@themename:=\beamer@themelist\do
+    {\usepackage[{#1}]{\beamer@themelocation/#3\beamer@themename}}}
+
+  \def\usefolder#1{
+    \def\beamer@themelocation{#1}
+  }
+  \def\beamer@themelocation{}
+
+%-------------------------------------------------------
+% INCLUDE PACKAGES
+%-------------------------------------------------------
+
+\usepackage{minted} % Code listing
+\usepackage{forest} % Tree graphs
+\usepackage{fontspec} % UTf-8 input support lualatex
+% \usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{wasysym}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{graphicx}
+\usepackage{microtype} % nice text appearance
+\usepackage{ragged2e}
+\usepackage{pgfpages}
+\usepackage[ngerman]{babel} % german text standards
+\usepackage{docmute} % Import other .tex files ignoring document
+\usepackage{multicol} % Automatically use multiple columns
+\usepackage{fontawesome} % WebFonts including href icon
+
+%-------------------------------------------------------
+% Config Theme
+%-------------------------------------------------------
+\usefolder{../Templates/featherZR}
+\usetheme[
+    progressstyle=movingCircCnt   % fixedCircCnt, movingCircCnt (moving is deault)
+  ]{Feather}
+
+\setsansfont{HelveticaNeue}
+\setmonofont{Source Code Pro for Powerline}[Scale = MatchLowercase]
+
+%-------------------------------------------------------
+% DEFFINING AND REDEFINING COMMANDS
+%-------------------------------------------------------
+
+%\setbeameroption{show notes}
+%\setbeameroption{show notes on second screen=right}
+
+%Set Path to images
+\graphicspath{{Images/}}
+
+% colored hyperlinks
+\newcommand{\chref}[2]{%
+\href{#1}{{\usebeamercolor[bg]{Feather}#2} {\footnotesize\faExternalLink}}%
+}
+
+%Justification
+\addtobeamertemplate{theorem begin}{}{\justifying}
+\addtobeamertemplate{block begin}{}{\justifying}
+\addtobeamertemplate{itemize begin}{}{\justifying}
+\addtobeamertemplate{item begin}{}{\justifying}
+\addtobeamertemplate{frame begin}{}{\justifying}
+\addtobeamertemplate{quote begin}{}{\justifying}
+\addtobeamertemplate{structure begin}{}{\justifying}
+
+%etoolbox für nested list covering
+\setbeamercovered{transparent}
+
+%description inde
+\setbeamersize{description width=0.57cm}
+
+\makeatletter
+\newcommand*\fix@beamer@close{%
+  \ifnum\beamer@trivlistdepth>0
+  \beamer@closeitem
+  \fi
+}
+\newcommand*\fix@beamer@open{%
+  \ifnum\beamer@trivlistdepth>0
+  \gdef\beamer@closeitem{}%
+  \fi
+}
+\newcommand<>{\highlighton}[1]{%
+  \alt#2{\structure{#1}}{{#1}}
+}
+
+\BeforeBeginEnvironment{enumerate}{\fix@beamer@close}
+\AfterEndEnvironment{enumerate}{\fix@beamer@open}
+\BeforeBeginEnvironment{itemize}{\fix@beamer@close}
+\AfterEndEnvironment{itemize}{\fix@beamer@open}
+\BeforeBeginEnvironment{description}{\fix@beamer@close}
+\AfterEndEnvironment{description}{\fix@beamer@open}
+\makeatother
+
+% Codelistings
+\definecolor{monokaibg}{HTML}{002833}
+\definecolor{highlightbg}{HTML}{004550}
+
+\setminted{
+  autogobble=true,
+  bgcolor=monokaibg,
+  breaklines=true,
+  fontsize=\footnotesize,
+  highlightcolor=highlightbg,
+  linenos=true,
+  labelposition=bottomline,
+  rulecolor=white,
+  style=native,
+}
+
+\setmintedinline{
+  bgcolor={},
+  fontsize=\normalsize,
+  style=manni
+}
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+
+\title[PHPUnit Tutorial ] % [] is optional - is placed on the bottom of the sidebar on every slide
+{ % is placed on the title page
+      \textbf{PHPUnit Tutorial}
+}
+
+\subtitle[ -- Funktionsweise von PHPUnit]
+{
+%      \textbf{v. 1.0.0}
+}
+
+\author[Sebastian Knott]{Sebastian Knott}
+
+\institute[]
+{
+      ZooRoyal IT\\
+
+  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
+}
+
+\date{\today}
+
+\begin{document}
+
+\input{xDebug}
+\end{document}

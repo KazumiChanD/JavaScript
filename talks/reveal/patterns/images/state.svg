@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="411px" preserveAspectRatio="none" style="width:542px;height:411px;" version="1.1" viewBox="0 0 542 411" width="542px" zoomAndPan="magnify"><defs><filter height="300%" id="fzx6u71iyw4je" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class TCPConnection--><rect fill="#FEFECE" filter="url(#fzx6u71iyw4je)" height="133.7305" id="TCPConnection" style="stroke: #A80036; stroke-width: 1.5;" width="141" x="390" y="141.5"/><ellipse cx="415.35" cy="157.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M418.3231,163.1431 Q417.7421,163.4419 417.1029,163.5913 Q416.4638,163.7407 415.7582,163.7407 Q413.2514,163.7407 411.9315,162.0889 Q410.6117,160.437 410.6117,157.3159 Q410.6117,154.1865 411.9315,152.5347 Q413.2514,150.8828 415.7582,150.8828 Q416.4638,150.8828 417.1112,151.0322 Q417.7587,151.1816 418.3231,151.4805 L418.3231,154.2031 Q417.6923,153.6221 417.0988,153.3523 Q416.5053,153.0825 415.8744,153.0825 Q414.5297,153.0825 413.8449,154.1492 Q413.1601,155.2158 413.1601,157.3159 Q413.1601,159.4077 413.8449,160.4744 Q414.5297,161.541 415.8744,161.541 Q416.5053,161.541 417.0988,161.2712 Q417.6923,161.0015 418.3231,160.4204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="86" x="431.65" y="162.0352">TCPConnection</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="391" x2="530" y1="173.5" y2="173.5"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398" y="182.4775"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="67" x="410" y="188.1348">state : string</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398" y="195.4326"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="71" x="410" y="201.0898">socket : sting</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398" y="208.3877"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="115" x="410" y="214.0449">errorMessage : string</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="391" x2="530" y1="220.3652" y2="220.3652"/><ellipse cx="401" cy="232.3428" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="35" x="410" y="235">open()</text><ellipse cx="401" cy="245.2979" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="410" y="247.9551">close()</text><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="391" x2="530" y1="254.2754" y2="254.2754"/><ellipse cx="401" cy="266.2529" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="35" x="410" y="268.9102">getId()</text><path d="M6,8 L6,399.3799 A0,0 0 0 0 6,399.3799 L355,399.3799 A0,0 0 0 0 355,399.3799 L355,207.6899 L394,230.8428 L355,199.6899 L355,18 L345,8 L6,8 A0,0 0 0 0 6,8 " fill="#FBFB77" filter="url(#fzx6u71iyw4je)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M345,8 L345,18 L355,18 L345,8 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="160" x="12" y="27.0854">if (state === 'open'</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="144" x="44" y="44.4209">&amp;&amp; socket !== null</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="200" x="44" y="61.7563">&amp;&amp; errorMessage === null)</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="264" x="76" y="79.0918">throw Exception ('Already open');</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="20" y="96.4272"/><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="208" x="12" y="113.7627">elseif (state === 'closed'</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="144" x="44" y="131.0981">&amp;&amp; socket === null</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="200" x="44" y="148.4336">&amp;&amp; errorMessage === null)</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="176" x="76" y="165.769">socket = open(socket);</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="120" x="76" y="183.1045">state = 'open';</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="20" y="200.4399"/><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="208" x="12" y="217.7754">elseif (state === 'closed'</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="144" x="44" y="235.1108">&amp;&amp; socket !== null</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="200" x="44" y="252.4463">&amp;&amp; errorMessage === null)</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="176" x="76" y="269.7817">socket = open(socket);</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="120" x="76" y="287.1172">state = 'open';</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="40" x="12" y="304.4526">[...]</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="200" x="12" y="321.7881">elseif (state === 'error'</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="144" x="44" y="339.1235">&amp;&amp; socket !== null</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="200" x="44" y="356.459">&amp;&amp; errorMessage !== null)</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="248" x="76" y="373.7944">throw Exception (errorMessage);</text><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="8" x="12" y="391.1299">)</text><!--link TCPConnection$$$LEFT to TCPConnection--><!--
+@startuml
+
+skinparam noteFontName Monaco
+
+class TCPConnection {
+    - state : string
+    - socket : sting
+    - errorMessage : string
+    - -
+    + open()
+    + close()
+    ..
+    + getId()
+}
+
+
+note left of TCPConnection::open()
+    if (state === 'open'
+        && socket !== null
+        && errorMessage === null)
+            throw Exception ('Already open');
+
+    elseif (state === 'closed'
+        && socket === null
+        && errorMessage === null)
+            socket = open(socket);
+            state = 'open';
+
+    elseif (state === 'closed'
+        && socket !== null
+        && errorMessage === null)
+            socket = open(socket);
+            state = 'open';
+    [...]
+    elseif (state === 'error'
+        && socket !== null
+        && errorMessage !== null)
+            throw Exception (errorMessage);
+    )
+endnote
+
+@enduml
+
+PlantUML version 1.2018.09(Fri Jul 27 18:58:18 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b8
+Operating System: Mac OS X
+OS Version: 10.13.6
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>

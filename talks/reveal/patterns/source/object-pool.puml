@@ -1,0 +1,72 @@
+@startuml
+
+abstract class Controller
+
+class ControllerA extends Controller
+class ControllerB extends Controller
+
+class DatabaseConnector
+
+Controller -right-> DatabaseConnector
+
+@enduml
+
+@startuml
+
+object "<u>:ControllerA</u>" as 1CA
+object "<u>:ControllerB</u>" as 1CB
+object "<u>:DatabaseConnector</u>" as 1DC
+object "<u>:DatabaseConnector</u>" as 2DC
+
+1CA -- 1DC
+1CB -- 2DC
+
+@enduml
+
+@startuml
+
+class Client
+class ObjectPool {
+    - reusableObjects : Object[]
+    + {static} getObjectPool()
+    + getInstanceOf(String) : Object
+    + releaseObject(Object)
+}
+
+Client ..> ObjectPool : <<use>>
+
+@enduml
+
+@startuml
+
+abstract class Controller {
+    - dbc : DatabaseConnector
+    + __construct()
+}
+
+class ControllerA extends Controller
+class ControllerB extends Controller
+
+class DatabaseConnector
+
+note top of Controller
+function __construct(){
+    $oP = ObjectPool->getObjectPool;
+    $this->dbc = $oP->getInstanceOf('DatabaseConnector');
+}
+endnote
+
+Controller -right-> DatabaseConnector
+
+@enduml
+
+@startuml
+
+object "<u>:ControllerA</u>" as 1CA
+object "<u>:ControllerB</u>" as 1CB
+object "<u>:DatabaseConnector</u>" as 1DC
+
+1CA -- 1DC
+1CB -- 1DC
+
+@enduml

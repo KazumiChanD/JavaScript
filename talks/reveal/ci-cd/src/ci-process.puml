@@ -1,0 +1,27 @@
+@startuml
+
+(*) -->[Push a Commit] "Version Controll" as VCS
+
+VCS -->[Trigger build] "Build"
+
+if "Build successfull" then
+    -->[false] "Send Feedback"
+else
+    -->[true] "Static Code Analysis"
+
+if "Static Code Analysis successfull" then
+    -->[false] "Send Feedback"
+else
+    -->[true] "Automated Tests"
+
+if "Automated Tests successfull" then
+    -->[false] "Send Feedback"
+else
+    -->[true] "Acceptance Tests"
+
+
+"Acceptance Tests" --> "Send Feedback"
+
+"Send Feedback" --> (*)
+
+@enduml

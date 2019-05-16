@@ -1,0 +1,177 @@
+@startuml
+hide Client member
+hide Client circle
+
+class Client
+
+class Directory {
+    + containedFiles : [Directory|File|Link]
+
+    + getName() : string
+    + getParentDirectory() : Directory
+    + getDate() : Date
+}
+
+class File {
+    + getName() : string
+    + getParentDirectory() : Directory
+    + getSize() : int
+}
+
+class Image {
+    + getContent()
+}
+
+class Text {
+    + getContent()
+}
+
+class Link {
+    + getParentDirectory() : Directory
+    + getTargetFile() : File
+    + getTargetDirectory() : Directory
+    + isFileOrDirectory() : String
+}
+
+Directory <-down- Client
+File <-down- Client
+Link <-down- Client
+Directory "*" <-- "*" Directory
+Link "*" <-- "*" Directory
+File "*" <-left- "*" Directory
+
+File "0..1" <-- "*" Link
+Directory "0..1" <-- "*" Link
+
+File <|-- Image
+File <|-- Text
+
+
+@enduml
+
+@startuml
+
+skinparam linetype ortho
+
+abstract class Component {
+    + getChildren() : Component[]
+    + {abstract} operation()
+}
+
+class Composite {
+    + children : Component
+    + operation()
+}
+
+class Leaf {
+    + operation()
+}
+
+note left of Composite::operation
+operation() {
+    for all child in children
+        child.operation();
+}
+end note
+
+Component <|-down- Composite
+Component <|-left- Leaf
+
+Component <--o Composite
+
+@enduml
+
+@startuml
+hide member
+
+skinparam linetype ortho
+
+object "Composite1" as c1
+object "Composite2" as c2
+object "Composite3" as c3
+object "Leaf1" as l1
+object "Leaf2" as l2
+object "Leaf3" as l3
+
+c1 <-- c2
+c1 <-- l1
+c2 <-- c3
+c3 <-- l2
+c3 <-- l3
+
+
+@enduml
+
+@startuml
+hide Client member
+hide Client circle
+
+skinparam linetype ortho
+
+class Client
+
+abstract class Component {
+    - children : Component[]
+
+    + getDate() : Date
+    + getName() : String
+    + {abstract} getSize() : int
+}
+
+class Directory<<Composite>> extends Component {
+    + getSize() : int
+    + getChildren() : Component[]
+}
+
+note left of Directory::getSize
+getSize() {
+    size = 0
+    for all child in children
+        size += child.getSize()
+    return size
+}
+endnote
+
+abstract class File extends Component {
+    + getSize() : int
+}
+
+class Image<<Leaf>> extends File {
+    + getContent()
+}
+
+class Text<<Leaf>> extends File {
+    + getContent()
+}
+
+Component <- Client
+Component "1" <-- "*" Directory
+
+
+@enduml
+
+@startuml
+
+class Vorstand {
+    + getName()
+    + getUntergebene()
+}
+class Bereichsleiter{
+    + getName()
+    + getUntergebene()
+}
+class Abteilungsleiter{
+  + getName()
+  + getUntergebene()
+}
+class Teamleiter{
+    + getName()
+    + getUntergebene()
+}
+class Angestellter{
+  + getName()
+  + getUntergebene()
+}
+
+@enduml
+

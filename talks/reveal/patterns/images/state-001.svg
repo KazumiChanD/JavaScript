@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="223px" preserveAspectRatio="none" style="width:408px;height:223px;" version="1.1" viewBox="0 0 408 223" width="408px" zoomAndPan="magnify"><defs><filter height="300%" id="f1su3eridyjxs0" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class State--><rect fill="#FEFECE" filter="url(#f1su3eridyjxs0)" height="60.9551" id="State" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="305.5" y="24.5"/><ellipse cx="325" cy="40.5" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M320.9277,36.2651 L320.9277,34.1069 L328.3071,34.1069 L328.3071,36.2651 L325.8418,36.2651 L325.8418,44.3418 L328.3071,44.3418 L328.3071,46.5 L320.9277,46.5 L320.9277,44.3418 L323.3931,44.3418 L323.3931,36.2651 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="28" x="340" y="45.0352">State</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="306.5" x2="374.5" y1="56.5" y2="56.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="306.5" x2="374.5" y1="64.5" y2="64.5"/><ellipse cx="316.5" cy="76.4775" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="44" x="325.5" y="79.1348">handle()</text><!--class ConcreteState--><rect fill="#FEFECE" filter="url(#f1su3eridyjxs0)" height="60.9551" id="ConcreteState" style="stroke: #A80036; stroke-width: 1.5;" width="111" x="286" y="152"/><ellipse cx="301" cy="168" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M303.9731,173.6431 Q303.3921,173.9419 302.7529,174.0913 Q302.1138,174.2407 301.4082,174.2407 Q298.9014,174.2407 297.5815,172.5889 Q296.2617,170.937 296.2617,167.8159 Q296.2617,164.6865 297.5815,163.0347 Q298.9014,161.3828 301.4082,161.3828 Q302.1138,161.3828 302.7612,161.5322 Q303.4087,161.6816 303.9731,161.9805 L303.9731,164.7031 Q303.3423,164.1221 302.7488,163.8523 Q302.1553,163.5825 301.5244,163.5825 Q300.1797,163.5825 299.4949,164.6492 Q298.8101,165.7158 298.8101,167.8159 Q298.8101,169.9077 299.4949,170.9744 Q300.1797,172.041 301.5244,172.041 Q302.1553,172.041 302.7488,171.7712 Q303.3423,171.5015 303.9731,170.9204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="79" x="315" y="172.5352">ConcreteState</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="287" x2="396" y1="184" y2="184"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="287" x2="396" y1="192" y2="192"/><ellipse cx="297" cy="203.9775" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="44" x="306" y="206.6348">handle()</text><!--class Context--><rect fill="#FEFECE" filter="url(#f1su3eridyjxs0)" height="73.9102" id="Context" style="stroke: #A80036; stroke-width: 1.5;" width="87" x="182" y="18"/><ellipse cx="201.95" cy="34" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M204.9231,39.6431 Q204.3421,39.9419 203.7029,40.0913 Q203.0638,40.2407 202.3582,40.2407 Q199.8514,40.2407 198.5315,38.5889 Q197.2117,36.937 197.2117,33.8159 Q197.2117,30.6865 198.5315,29.0347 Q199.8514,27.3828 202.3582,27.3828 Q203.0638,27.3828 203.7112,27.5322 Q204.3587,27.6816 204.9231,27.9805 L204.9231,30.7031 Q204.2923,30.1221 203.6988,29.8523 Q203.1053,29.5825 202.4744,29.5825 Q201.1297,29.5825 200.4449,30.6492 Q199.7601,31.7158 199.7601,33.8159 Q199.7601,35.9077 200.4449,36.9744 Q201.1297,38.041 202.4744,38.041 Q203.1053,38.041 203.6988,37.7712 Q204.2923,37.5015 204.9231,36.9204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="44" x="217.05" y="38.5352">Context</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="183" x2="268" y1="50" y2="50"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="190" y="58.9775"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="61" x="202" y="64.6348">state : State</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="183" x2="268" y1="70.9551" y2="70.9551"/><ellipse cx="193" cy="82.9326" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="202" y="85.5898">request()</text><path d="M6,36.5 L6,63.8354 A0,0 0 0 0 6,63.8354 L147,63.8354 A0,0 0 0 0 147,63.8354 L147,54.5 L186,81.4326 L147,46.5 L147,46.5 L137,36.5 L6,36.5 A0,0 0 0 0 6,36.5 " fill="#FBFB77" filter="url(#f1su3eridyjxs0)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M137,36.5 L137,46.5 L147,46.5 L137,36.5 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="Monaco" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="120" x="12" y="55.5854">state-&gt;handle()</text><!--link State to ConcreteState--><path d="M340.8979,105.7355 C341.0201,121.309 341.1507,137.9647 341.259,151.7679 " fill="none" id="State-ConcreteState" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="333.8967,105.5937,340.7395,85.5394,347.8963,105.4839,333.8967,105.5937" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Context$$$LEFT to Context--><!--link State to Context--><path d="M292.2748,55 C288.8863,55 285.4977,55 282.1091,55 " fill="none" id="State-Context" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="269.0742,55,275.0742,59,281.0742,55,275.0742,51,269.0742,55" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="305.3451,55,296.3451,51,300.3451,55,296.3451,59,305.3451,55" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="300.3451" x2="292.3452" y1="55" y2="54.9999"/><!--
+@startuml
+
+skinparam noteFontName Monaco
+
+class Context {
+    - state : State
+    + request()
+}
+
+together {
+    interface State {
+        + handle()
+    }
+
+    class ConcreteState implements State{
+        + handle()
+    }
+}
+
+note left of Context::request
+    state->handle()
+end note
+
+
+Context o-left-> State
+
+@enduml
+
+PlantUML version 1.2018.09(Fri Jul 27 18:58:18 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b8
+Operating System: Mac OS X
+OS Version: 10.13.6
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>

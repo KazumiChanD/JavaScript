@@ -1,0 +1,29 @@
+@startuml
+hide circle
+hide Test members
+
+class Original {
+    + doThis()
+    + doThat()
+}
+class PartialMock{
+    + doThis()
+    + doThat()
+}
+class Test
+
+note right of PartialMock::doThis()
+Mocked
+Keine Weiterleitung
+end note
+
+note right of PartialMock::doThat()
+Weiterleitung auf Original::doThat()
+end note
+
+Original <|-- PartialMock
+Original <-- PartialMock
+PartialMock <..right.. Test : <<use>>
+
+
+@enduml

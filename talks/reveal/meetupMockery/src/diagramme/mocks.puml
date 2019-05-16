@@ -1,0 +1,12 @@
+@startuml
+hide circle
+hide members
+
+class Original
+class Mock
+class Test
+
+Original <|-- Mock
+Mock <.right. Test : <<use>>
+
+@enduml

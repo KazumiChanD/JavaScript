@@ -1,0 +1,1643 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Design Patterns</title>
+
+  <meta name="description"
+        content="A presentation about Design Patterns">
+  <meta name="author" content="Sebastian Knott">
+  <meta name="apple-mobile-web-app-capable"
+        content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="../node_modules/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../theme/zooroyal.css" id="theme">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../node_modules/reveal.js/lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? '../node_modules/reveal.js/css/print/pdf.css' :
+          '../node_modules/reveal.js/css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+
+  <!--[if lt IE 9]>
+  <script src="../node_modules/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<section id="zoologo">
+  <a href="http://zooroyal.de"></a>
+</section>
+<div class="reveal">
+  <div class="slides">
+    <section data-background="../theme/image/banner-opacity.jpg"
+             data-menu-title="Home">
+      <h1>Design Patterns</h1>
+      <p>ZooRoyal IT</p>
+      <p>Sebastian Knott</p>
+      <script>document.write(new Date().toLocaleDateString())</script>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ## Was sind Pattern?
+
+          ----
+        </script>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-light-bulb.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Grundidee von Pattern
+
+            * <!-- .element: class="fragment" --> Alle
+            Ingenieursdisziplinen benötigen eine
+            <span class="color-highlight"> Terminologie </span>
+            ihrer wesentlichen Konzepte ...
+            * <!-- .element: class="fragment" --> ... sowie eine
+            <span class="color-highlight"> Sprache </span>,
+            die diese Konzepte in Beziehung setzt
+            * <!-- .element: class="fragment" -->
+            <span class="color-highlight"> Design Pattern</span>
+            (Entwurfsmuster)  wurden zuerst im Bereich der Architektur
+            beschrieben
+          </script>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-uml-developer.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Ziel von Software Pattern
+
+            * <!-- .element: class="fragment" -->
+            <span class="color-highlight">Dokumentation</span>
+            von Lösungen wiederkehrender Probleme, um
+            Programmierer bei der Softwareentwicklung zu unterstützen
+            * <!-- .element: class="fragment" -->  Schaffung
+            einer <span class="color-highlight"> gemeinsamen Sprache</span>,
+            um über Probleme und ihre Lösungen
+            zu sprechen
+            * <!-- .element: class="fragment" --> Bereitstellung
+            eines standardisierten Katalogisierungsschemas um
+            <span class="color-highlight"> erfolgreiche Lösungen</span>
+            aufzuzeichnen
+          </script>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-paper.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            #### Aber &hellip;
+
+            * Bei <!-- .element: class="fragment" --> Pattern
+            handelt es sich nicht um eine Technologie <br/>
+            (wie z.B. bei UML)
+              * Patterns sollen unterstützen, nicht einengen
+            * Es <!-- .element: class="fragment" --> ist eine
+            Kultur der Dokumentation und Unterstützung guter
+            Softwarearchitektur
+            * Pattern <!-- .element: class="fragment" --> sind
+            nicht die Lösung für alles
+
+          </script>
+        </div>
+        <aside class="notes">
+          Wer Kann UML?
+          Crash course:
+          <ul>
+            <li>
+              Klassen
+              <ul>
+                <li>Felder</li>
+                <li>Methoden</li>
+                <li>Public,Protected,Private</li>
+              </ul>
+            </li>
+            <li>Assoziation</li>
+            <li>Vererbung</li>
+            <li>Implementierung</li>
+            <li>Multiplizität</li>
+            <li>Aggregation, Komposition</li>
+          </ul>
+        </aside>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ## Facade-Pattern
+
+          ----
+          ![Facade](images/banner-facade.jpg "Facade Pattern")
+          <!-- .element: style="height: 16em;" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Problemstellung
+
+          Der direkte Zugriff auf die Interfaces von ein oder mehreren
+          Subsystemen ist unpraktikabel oder nicht erwünscht.
+        </script>
+      </section>
+
+      <section>
+        <h2>Absicht</h2>
+
+        <blockquote>
+          <p>
+            Provide a unified interface to a set of interfaces in a
+            subsystem. Facade defines a higher-level interface that makes the
+            subsystem easier to use.
+          </p>
+          <footer>&mdash; <a href="http://www.uml.org.cn/c++/pdf/DesignPatterns.pdf" target="_blank">Gang of Four</a></footer>
+        </blockquote>
+
+        <div data-markdown>
+          <script type="text/template">
+            * Interfaces von mehreren Subsystemen bündeln
+            * Interfaces in einem besser zugeschnittenen Interface verpacken
+            * Trennung von Implementierung und externem Interface
+          </script>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Problembeispiel
+
+          ![Facade Example](images/facade.svg "Facade
+          Example")
+          <!-- .element: class="fullscreen--horizontal" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Struktur
+
+          ![Facade Structure](images/facade-002.svg "Facade Structure")
+          <!-- .element: class="fullscreen--vertical" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Strukturbeispiel
+
+          ![Facade Example](images/facade-001.svg "Facade
+          Example")
+          <!-- .element: class="fullscreen--vertical" -->
+        </script>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-checklist.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Checkliste zur Implementierung
+
+            1. <!-- .element: class="fragment" -->
+            <span class="color-highlight">Planung</span> eines simpleren
+            Interfaces für ein  Subsystem
+            2. <!-- .element: class="fragment" -->
+            Schreiben einer <span class="color-highlight">Wrapper-Klasse</span>
+            um das Subsystem
+            3. <!-- .element: class="fragment" -->
+            Interaktionen mit den Subsystemen im Wrapper
+            <span class="color-highlight"> zusammenfassen</span>
+            * <!-- .element: class="fragment" --> Wrapper
+            delegiert Aufrufe an Methoden des Subsystems
+            4. <!-- .element: class="fragment" --> Clients auf
+            Wrapper <span class="color-highlight">umstellen</span>
+          </script>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-folgen.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Folgen
+
+            * <!-- .element: class="fragment" --> Reduziert die
+            Anzahl der zu handhabenden Objekte
+            * <!-- .element: class="fragment" --> Fördert lose
+            Kopplung
+            * <!-- .element: class="fragment" --> Verhindert
+            nicht, dass Clients Subsystemklassen verwenden
+          </script>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-handson.jpg">
+        <div class="box" data-markdown>
+          ### Hands-on
+
+          ![Strategy](images/facade-003.svg "Facade Hands-on")
+          <!-- .element: style="height: 16em;" -->
+
+          * Vereinfache das System für den Piloten
+          * Benenne die Komponenten der Lösung
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ## Strategy-Pattern
+
+          ----
+          ![Strategy](images/banner-strategy.jpg "Strategy Pattern")
+          <!-- .element: style="height: 16em;" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Problemstellung
+          Kontext und Implementierung eines Algorithmus sind so
+          fest gekoppelt, dass der Code schwer zu erweitern ist.
+
+          * <!-- .element: class="fragment" -->
+          Kontext und Logik sind miteinander verzahnt
+          * <!-- .element: class="fragment" -->
+          Es ist sehr schwierig Varianten zu bilden
+          * <!-- .element: class="fragment" -->
+          Verschiedene Logik ist nicht klar voneinander getrennt
+          * <!-- .element: class="fragment" -->
+          Naives Vererben hilft einem nicht weiter
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ![Strategy](images/strategy.svg)
+          <!-- .element: class="fullscreen--horizontal" -->
+          * Abstrakte Methode <code>move()</code> wird in Kindern
+          implementiert
+          * Implementierung unterschiedlich, also nicht in
+          abstrakter Klasse
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ![Strategy](images/strategy-001.svg)
+          <!-- .element: class="fullscreen--horizontal" -->
+          * Mit der Zeit kommen mehr Implementierungen dazu
+          * Jede Klasse braucht eigene Implementierung
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Absicht
+
+          <blockquote><p>Define a family of algorithms, encapsulate each one, and
+            make them interchangeable. Strategy lets the algorithm vary
+            independently from clients that use it.</p>
+            <footer>&mdash; <a href="http://www.uml.org.cn/c++/pdf/DesignPatterns.pdf" target="_blank">Gang of Four</a></footer>
+          </blockquote>
+
+          note:
+          * Definiter eine Gruppe von Algorithmen. Kapsel jeden einzelnen und machen sie austauschbar.
+          * Das Strategy Pattern ermöglicht es Algorithmen unabhängig von nutzer zu variieren
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Struktur
+
+          ![Strategy](images/strategy-002.svg)
+          * Implementierung gegen Interfaces statt konkrete Klassen
+          * Kontext von Algorithmus trennen
+          * Algorithmus austauschbar
+          * Vermeidet Minimalunterschiede in Klassenvererbung
+          * Kann zur Laufzeit konfiguriert werden
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          #### Warum nicht so... ?
+          ![Strategy](images/strategy-003.svg)
+
+          Hieraus ergeben sich weitere Probleme, die sich <br />
+          auf das [Bridge-Pattern](#/Bridge-Pattern) beziehen.
+        </script>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-checklist.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Checkliste zur Implementierung
+
+            1. <!-- .element: class="fragment" -->
+            <span class="color-highlight">Identifizieren</span>
+            der Menge von Algorithmen zwischen denen variiert
+            werden soll
+            2. <!-- .element: class="fragment" -->
+            <span class="color-highlight">Spezifizieren der Signaturen</span>
+            der Algorithmen im Interface
+            3. <!-- .element: class="fragment" -->
+            <span class="color-highlight">Implementieren</span> der
+            Algorithmen in entsprechenden Klassen
+            4. <!-- .element: class="fragment" -->
+            <span class="color-highlight">Alle Client-Referenzen
+              umstellen</span> auf das Interface
+          </script>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-folgen.jpg">
+        <div class="box">
+          <h3>Folgen</h3>
+
+          <div class="column-2">
+            <div class="hyphenated" data-markdown>
+              <script type="text/template">
+                #### Pro
+                * <!-- .element: class="fragment" -->
+                Vermeidet Vererbung
+                * <!-- .element: class="fragment" -->
+                Kontext und Algo&shy;rithmus sind jeweils
+                wieder&shy;verwendbar
+                * <!-- .element: class="fragment" -->
+                Alternativen zum selben Algorithmus
+                * <!-- .element: class="fragment" -->
+                Strategien entfernen Switch-Case aus dem
+                Kontext
+              </script>
+            </div>
+            <div data-markdown>
+              <script type="text/template">
+                #### Contra
+                * <!-- .element: class="fragment" -->
+                Erhöht u.U. Klassenanzahl
+                * <!-- .element: class="fragment" -->
+                Enge Kopplung zwischen Kontext und Algorithmus
+                * <!-- .element: class="fragment" --> Kontext muss in einem
+                Setup-Schritt Strategie übergeben werden
+              </script>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Die Zuordnung der Strategy kann beispielsweise in
+            einer Factory oder einem Konfigurationsschritt
+            passieren und muss nicht vom Kontext erledigt werden.
+          </aside>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-handson.jpg">
+        <div class="box">
+          <h3>Hands-on</h3>
+
+          <div class="column-2" style="grid-template-columns: 2fr 1fr;">
+            <div>
+              <img src="images/strategy-004.svg" alt="Strategy Hands-on">
+            </div>
+            <div class="hyphenated">
+              <p>Verschlüsselungsdienst kann Quelle verschlüsseln</p>
+              <p>Verschlüsselungsdienst kann für einen Algorithmus konfiguriert
+                werden</p>
+              <p>Algorithmen : AES, DES, RSA</p>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section id="Bridge-Pattern" data-markdown>
+        <script type="text/template">
+          ## Bridge-Pattern
+
+          ----
+          ![Bridge](images/banner-bridge.jpg "Bridge Pattern")
+          <!-- .element: style="height: 16em;" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Problemstellung
+
+          Eine Menge von Klassen hat viele orthogonale (unabhängige)
+          Eigenschaften. Eine Vererbungsstruktur würde zu einem unpraktikabel
+          großen Klassenbaum führen.
+
+          note:
+          ##### Ortogonale Eigenschaften
+
+          * x/y - Beispiel
+          * Änderung an x betrifft y nicht / Vice versa
+          * Änderungen an beiden füllt den ganzen Raum aus
+        </script>
+      </section>
+
+      <section data-markdown data-transition="zoom">
+        <script type="text/template">
+          ![Bridge-Small](images/bridge.svg)
+          <!-- .element: style="width: 20em;" -->
+
+          Orthogonale Eigenschaften:
+          * Bauform
+        </script>
+      </section>
+
+      <section data-markdown data-transition="zoom">
+        <script type="text/template">
+          ![Bridge-Medium](images/bridge-001.svg)
+          <!-- .element: style="width: 25em;" -->
+
+          Orthogonale Eigenschaften:
+          * Bauform
+          * Motorart
+        </script>
+      </section>
+
+      <section data-markdown data-transition="zoom">
+        <script type="text/template">
+          ![Bridge-Large](images/bridge-002.svg)
+          <!-- .element: style="width: 30em;" -->
+
+          Orthogonale Eigenschaften:
+          * Bauform
+          * Motorart
+          * Links-/Rechtsverkehr
+        </script>
+      </section>
+
+      <section >
+        <h3>Absicht</h3>
+          <blockquote>
+            <p>
+              Decouple an abstraction from its implementation so that the two can vary
+              independently.
+            </p>
+            <footer>&mdash; <a href="http://www.uml.org.cn/c++/pdf/DesignPatterns.pdf" target="_blank">Gang of Four</a></footer>
+          </blockquote><br>
+
+        <div data-markdown>
+          <script type="text/template">
+            * Orthogonale Eigenschaften als solche implementieren
+            * Mehrfachimplementierung eindämmen
+            * Anzahl der Klassen minimieren
+
+            note:
+            Entkoppelt die Abstraktion von seiner Implementierung.
+          </script>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Struktur
+
+          ![Bridge-Struktur](images/bridge-003.svg)
+          <!-- .element: style="width: 25em;" -->
+
+          * Ausprägungen einer Eigenschaft unter Interface zusammenfassen
+          * Subject per Referenz an Eigenschaft binden
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Strukturbeispiel
+
+          ![Bridge-Lösung](images/bridge-004.svg)
+          <!-- .element: class="fullscreen--horizontal" -->
+        </script>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-checklist.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Checkliste zur Implementierung
+
+            1. <!-- .element: class="fragment" -->
+            Identifiziere das <span class="color-highlight">Subject</span>
+            und dessen Spezialisierungen.
+            1. <!-- .element: class="fragment" -->
+            Identifiziere die <span class="color-highlight">Eigenschaft
+            </span> und deren Ausprägungen.
+            1. <!-- .element: class="fragment" -->
+            Implementiere das <span class="color-highlight">Interface</span>
+            der Eigenschaft.
+            1. <!-- .element: class="fragment" -->
+            <span class="color-highlight">Implementiere die Ausprägungen
+            </span> der Eigenschaft.
+            1. <!-- .element: class="fragment" -->
+            <span class="color-highlight">Umstellung </span> des Subjects auf
+            das Interface.
+
+          </script>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-folgen.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Folgen
+
+            * <!-- .element: class="fragment" --> Reduziert die
+            Anzahl der Klassen
+            * <!-- .element: class="fragment" --> Fördert lose
+            Kopplung
+            * <!-- .element: class="fragment" --> Macht Klassen zur
+            Laufzeit konfigurierbar
+            * <!-- .element: class="fragment" --> Sorgt für saubere
+            Vererbungshierarchie
+            * <!-- .element: class="fragment" --> "Seperation of concerns"
+            * <!-- .element: class="fragment" --> Instanziierung u.U. etwas
+            komplexer
+          </script>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-handson.jpg">
+        <div class="box">
+          <h3>Hands-on</h3>
+          <img src="images/bridge-005.svg" alt="Bridge Hands On">
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-bonusrunde.jpg">
+        <div class="box">
+          <h3> Bonusrunde Bridge + Strategy</h3>
+          <img src="images/bridge-004.svg" alt="">
+          <img src="images/strategy-002.svg" alt="">
+        </div>
+        <aside class="notes">
+          Was sind die Unterschiede? <br/>
+          Wann benutzt man was? <br/>
+        </aside>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ## State-Pattern
+
+          ----
+          ![State](images/banner-state.jpg "State Pattern")
+          <!-- .element: style="height: 16em;" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Problemstellung
+
+          Der interne State eines Objekts hängt von verschiedenen privaten
+          Feldern ab und erzeugt bei der Prüfung Overhead und Fehlerquellen.
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Problembeispiel
+
+          ![Bridge-Problem](images/state.svg)
+          <!-- .element: class="fullscreen--vertical" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Absicht
+
+          <blockquote><p>Allow an object to alter its behavior when its internal
+            state changes. The object will appear to change its class.</p>
+            <footer>&mdash; <a href="http://www.uml.org.cn/c++/pdf/DesignPatterns.pdf" target="_blank">Gang of Four</a></footer>
+          </blockquote>
+
+          note:
+          Erlaubt es einem Object ja nach innerem State sein Verhalten zu verändern.
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Struktur
+
+          ![Bridge-Struktur](images/state-001.svg)
+          <!-- .element: class="fullscreen--horizontal" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Strukturbeispiel
+
+          ![State-Lösung](images/state-002.svg)
+          <!-- .element: class="fullscreen--horizontal" -->
+        </script>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-checklist.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Checkliste Zur Implementierung
+
+            1. <!-- .element: class="fragment" -->
+            <span class="color-highlight">Identifiziere die Eigenschaften</span>,
+            die jeden State beschreiben.
+            1. <!-- .element: class="fragment" -->
+            Isoliere State-abhängige Methoden in einem
+            <span class="color-highlight">Interface</span>
+            1. <!-- .element: class="fragment" -->
+            Erzeugen der <span class="color-highlight">ConcreteState-Klassen</span>
+            1. <!-- .element: class="fragment" -->
+            Umschreiben der State-abhängige Methoden im
+            <span class="color-highlight">Context</span>.
+
+          </script>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-folgen.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Folgen
+
+            * <!-- .element: class="fragment" -->Verständlicher Code
+              * Code ist weniger fehleranfällig
+            * <!-- .element: class="fragment" -->Konsistente Zustandsübergänge
+            * <!-- .element: class="fragment" -->"Separation of concerns"
+            * <!-- .element: class="fragment" -->Wiederverwendbarkeit von States
+          </script>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-handson.jpg">
+        <div class="box">
+          <h3>Hands-on</h3>
+          Modelliere den Zustand eines Fernsehers
+          <div class="column-2 column-align-v-centered">
+            <div>
+              <img src="images/state-003.svg"
+                   alt="State-Hands-on"
+                   class="fragment">
+            </div>
+            <div>
+              <img src="images/state-004.svg"
+                   alt="State-Hands-on-Solution"
+                   class="fragment">
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ## Composite-Pattern
+
+          ----
+          ![Composite](images/banner-composite.jpg "Composite Pattern")
+          <!-- .element: style="height: 16em;" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Problemstellung
+
+          Eine Menge Baumförmige Struktur von ähnlichen Objekten soll in
+          Klassen modelliert werden &mdash; möglichst mit minimalem
+          Implementierungsaufwand.
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Problem Beispiel
+
+          ![No Composite](images/composite.svg)
+          <!-- .element: style="height: 16em;" -->
+        </script>
+      </section>
+
+      <section>
+        <h2>Absicht</h2>
+        <blockquote>
+          <p>Compose objects into tree structures to represent part-whole hierarchies.
+            Composite lets clients treat individual objects and compositions of objects
+            uniformly.</p>
+          <footer>&mdash; <a href="http://www.uml.org.cn/c++/pdf/DesignPatterns.pdf" target="_blank">Gang of Four</a></footer>
+        </blockquote><br>
+
+        <div data-markdown>
+          <script type="text/template">
+            &nbsp;
+
+            note:
+            * Ordnet Objekte in einer Baumstruktur an.
+            * Erlaubt es einem Client alle Objekte in gleicher weise zu nutzen.
+            * Einheitliche Struktur
+              * &hellip; für Methoden
+              * &hellip; für Klassen
+            * Vererbungshierarchie nutzen
+            * Implementierung gegen Interface
+          </script>
+        </div>
+      </section>
+
+      <section>
+        <h2>Struktur</h2>
+
+        <div class="column-2">
+          <div>
+            <h4>Klassendiagramm</h4>
+
+            <img src="images/composite-001.svg" alt="Composite-Structure">
+          </div>
+          <div>
+            <h4>Objektdiagramm</h4>
+            <img src="images/composite-002.svg" alt="Composite-Structure">
+          </div>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Strukturbeispiel
+
+          ![No Composite](images/composite-003.svg)
+          <!-- .element: style="height: 16em;" -->
+        </script>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-checklist.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ## Checkliste Zur Implementierung
+
+            1. <span class="color-highlight">Hierarchische Struktur</span>
+            sicher stellen
+            2. <!-- .element: class="fragment" --> <span
+              class="color-highlight">Baumförmige Struktur</span> sicher stellen &mdash;
+            innere Knoten und Blätter identifizierbar
+            3. <!-- .element: class="fragment" --> <span
+              class="color-highlight">Gemeinsames Interface</span> für
+            innere Knoten und Blätter definieren
+            4. <!-- .element: class="fragment" --> Knoten und Blätter auf das
+            <span class="color-highlight">Interface umstellen</span>
+            5. <!-- .element: class="fragment" --> Allen inneren Knoten <span
+              class="color-highlight">Relationen zu Objekten</span> des Typs
+            des Interfaces ermöglichen
+            6. <!-- .element: class="fragment" -->Allen inneren Knoten nutzen
+            in ihren Methoden, die sie aus dem Interface übernommen haben, die
+            Methoden ihrer Kinder
+
+            note:
+            zu 1. Fallstrick: Hierarchie wird erzwungen
+
+            zu 2. Was ist mit entarteten Bäumen?
+          </script>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-folgen.jpg">
+        <div class="box">
+          <h3>Folgen</h3>
+
+          <div class="column-2">
+            <div class="hyphenated" data-markdown>
+              <script type="text/template">
+                #### Pro
+                * <!-- .element: class="fragment" --> Komplexe Strukturen
+                durch primitive Klassen abbildbar
+                * <!-- .element: class="fragment" --> Wenig Aufwand für Client
+                * <!-- .element: class="fragment" --> Einheitliches Interface
+                * <!-- .element: class="fragment" --> Leicht erweiterbar
+              </script>
+            </div>
+            <div data-markdown>
+              <script type="text/template">
+                #### Contra
+                * <!-- .element: class="fragment" --> Rekursive Operationen
+                ungewohnt
+                * <!-- .element: class="fragment" --> Probleme bei iterativen
+                Algorithmen
+
+                note:
+                Iterativ als Gegenteil zu Rekursiv
+              </script>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Die Zuordnung der Strategy kann beispielsweise in
+            einer Factory oder einem Konfigurationsschritt
+            passieren und muss nicht vom Kontext erledigt werden.
+          </aside>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-handson.jpg">
+        <div class="box">
+          <h3>Hands-on</h3>
+          <img src="images/composite-004.svg" alt="Composite Hands On" class="fullscreen--horizontal">
+          <ul>
+            <li>Jeder Mitarbeiter soll die Menge aller Untergebenen zurückgeben</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ## Object Pool-Pattern
+
+          ----
+          ![Object Pool](images/banner-object-pool.jpg "Object Pool
+          Pattern")
+          <!-- .element: style="height: 16em;" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Problemstellung
+
+          Die Menge an Instanzen einer Menge von Klassen ist zu hoch. Die
+          Instanzen sollen an vielen Stellen eines Programms
+          wiederverwendet werden. Man benötigt ein zentrales Verzeichnis.
+
+          Note:
+          Viele Gründe:
+          * Insgesamt zu viele Instanzen
+          * Instanzen sollen ihren State mitnehmen
+          (Beispiel Datenbankverbindung neu aufbauen)
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Problembeispiel
+
+          <div class="column-2">
+            <div>
+              ![Object-Pool Example](images/object-pool.svg "Object-Pool Example")
+            </div>
+            <div>
+              ![Object-Pool Example](images/object-pool-001.svg "Object-Pool
+              Example")
+            </div>
+          </div>
+
+          * Der State des DatabaseConnectors ist wichtig
+          * Controller nutzen aber verschiedene Instanzen
+          * Mehr Aufwand durch mehrfaches Instanziieren
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Absicht
+
+          * Instanzen werden nur so oft erzeugt wie nötig
+          * Ein zentraler Dienst verwaltet Instanziierung
+          * Zentrales Verzeichnis
+          * State bleibt erhalten
+          * Ersatz für Singleton Anti-Pattern
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Struktur
+
+          <div class="column-2 column-align-v-centered">
+            <div>
+              ![Object-Pool Structure](images/object-pool-002.svg "Object-Pool
+              Structure")
+            </div>
+            <div>
+              <ul>
+                <li>ObjectPool ist ein Singleton</li>
+                <li>ObjectPool stellt Instanz einer Klasse zur Verfügung</li>
+                <li>ObjectPool zerstört auf Anfrage eine Instanz</li>
+              </ul>
+            </div>
+          </div>
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ### Strukturbeispiel
+
+          <div class="column-2 column-align-v-centered">
+            <div>
+              ![Object-Pool Structure](images/object-pool-003.svg
+              "Object-Pool Structure")
+            </div>
+            <div>
+              ![Object-Pool Structure](images/object-pool-004.svg "Object-Pool
+              Structure")
+            </div>
+          </div>
+
+        </script>
+      </section>
+
+      <section id="Anti-Pattern-Alarm" data-background-video="images/panik.mp4" data-background-video-loop
+               data-background-video-muted>
+        <div class="box">
+          <h3>
+            <a href="#/Anti-Pattern"><span class="color-red">Anti-Pattern</span></a>
+          </h3>
+          <h4>Statischer Service Locator</h4>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          #### Design Pattern &ne; Rolle
+
+          Eine Rolle beschreibt zu welchem Zweck man ein bestimmtes Design Pattern einsetzt.
+
+        </script>
+      </section>
+
+      <section id="Static-Service-Locator" data-markdown>
+        <script type="text/template">
+          #### Codebeispiel
+
+          <pre><code class="language-php" data-trim>
+            function doSomething(){
+              $databaseConnector = ServiceLocator::getInstance(DatabaseConnector::class);
+              $databaseConnector->select('foo');
+            }
+          </code></pre>
+
+          * ServiceLocator wird statisch aufgerufen
+          * <!-- .element: class="fragment" --> Harte Abhängigkeit
+          * <!-- .element: class="fragment" --> Bricht [Dependency Injection](#/Dependency-Injection)
+          * <!-- .element: class="fragment" --> Behindert Tests
+
+        </script>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-checklist.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ## Checkliste Zur Implementierung
+
+            1. Erzeuge ObjectPool mit privatem Feld vom Typ <code>stdClass[]</code>
+            2. <!-- .element: class="fragment" --> Implementieren der Methoden zum beziehen und löschen von Objekten.
+            3. <!-- .element: class="fragment" --> Sicherstellen, dass im ganzen Programm nur
+              <span class="color-highlight">ein und die selbe Instanz</span> von ObjectPool genutzt wird
+          </script>
+        </div>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-folgen.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ## Folgen
+
+            * Je nach Architektur deutlich weniger Instanziierungen von Klassen notwendig
+            * <!-- .element: class="fragment" --> Eine zentrale Verwaltung von Instanzen (Vereinfacht Tests)
+            * <!-- .element: class="fragment" --> Reusables behalten u.U. ihren State
+            * <!-- .element: class="fragment" --> Größe des ObjectPool muss beachtet werden, da Instanzen durch den
+              Garbage Collector nicht mehr abgebaut werden
+            * <!-- .element: class="fragment" --> ObjectPool macht Singletons überflüssig
+          </script>
+        </div>
+      </section>
+
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ## Template Method-Pattern
+
+          ----
+          ![Template](images/banner-template.jpg "Template Pattern")
+          <!-- .element: style="height: 16em;" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Problemstellung
+
+          Der allergrößte Teil eines Algorithmus bleibt in allen Fällen gleich. Nur ein kleiner Teil muss für
+          verschiedene Anwendungsfälle variiert werden.
+        </script>
+      </section>
+
+      <section>
+        <h2>Absicht</h2>
+
+        <blockquote>
+          <p>Define the skeleton of an algorithm in an operation, deferring some steps to
+            subclasses. Template Method lets subclasses redefine certain steps of an algorithm
+            without changing the algorithm'sstructure.</p>
+          <footer>&mdash; <a href="http://www.uml.org.cn/c++/pdf/DesignPatterns.pdf" target="_blank">Gang of Four</a>
+          </footer>
+        </blockquote>
+
+        <div data-markdown>
+          <script type="text/template">
+            <!-- .element: class="fragment" --> Eine Oberklasse definiert Platzhalter, welche von Unterklassen implementiert werden können
+
+            note:
+            * Definiert ein Skelett eines Algorithmus und delegiert einige Teile in Unterklassen.
+            * Unterklassen können das Verhalten eines Algorithmuses beeinflussen ohne die Struktur zu ändern.
+          </script>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Struktur
+
+          ![Template Struktur](images/template.svg)
+          <!-- .element: style="height: 16em;" -->
+
+          * <!-- .element: class="fragment" --> AbstractClass verwaltet den Ablauf
+          * <!-- .element: class="fragment" --> ConcreteClass implementiert die Arbeitsschritte
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Strukturbeispiel
+          #### Varianten
+
+          ![Template Struktur](images/template-001.svg)
+          <!-- .element: class="fullscreen--vertical" -->
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Strukturbeispiel
+          #### Sicherheit
+
+          ![Template Struktur](images/template-002.svg)
+          <!-- .element: class="fullscreen--horizontal" -->
+
+        </script>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-checklist.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ## Checkliste Zur Implementierung
+
+            1. Den <span class="color-highlight">Algorithmus in Operationen unterteilen</span>, die standardmäßig oder
+              nur in speziellen Situationen ausgeführt werden sollen
+            2. <!-- .element: class="fragment" --> <span class="color-highlight">Definition einer abstrakten Basisklasse
+              </span>, welche die Standardteile in Methoden implementiert
+            3. <!-- .element: class="fragment" --> <span class="color-highlight">Definition einer Platzhaltermethode
+              </span> für spezielles Verhalten
+            4. <!-- .element: class="fragment" --> <span class="color-highlight">Rufe die Platzhaltermethoden</span> in
+              der abstrakten Klasse auf
+            5. <!-- .element: class="fragment" --> <span class="color-highlight">Deklariere beliebig viele Kindklassen</span>
+              , die das spezielle Verhalten in ihren Methoden implementieren
+          </script>
+        </div>
+      </section>
+
+
+      <section
+        data-background="../resources/images/backgrounds/background-folgen.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ## Folgen
+
+            * Gut zu erweitern
+            * <!-- .element: class="fragment" --> Hoher Grad an Wiederverwendbarkeit
+            * <!-- .element: class="fragment" --> Möglichkeit Programmablauf festzulegen
+            * <!-- .element: class="fragment" --> Inversion of Control (Don't call us, we'll call you)
+          </script>
+        </div>
+      </section>
+
+      <section data-background="../resources/images/backgrounds/background-handson.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Hands-on
+
+            #### Aufgabe
+            * Implementiere einen Prozess mit den Schritten "<span class="color-highlight">Setup</span>", "<span
+              class="color-highlight">Execute</span>", "<span class="color-highlight">TearDown</span>".
+            * Die drei Phasen werden <span class="color-highlight">der Reihe nach durchlaufen</span>.
+            * Es soll möglichst einfach sein <span class="color-highlight">Varianten zu Bilden</span>, die eigene Logik
+            für die drei Phasen implementieren sollen
+          </script>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <section data-markdown>
+        <script type="text/template">
+          ## Adapter-Pattern
+
+          ----
+          ![Adapter](images/banner-adapter.jpg "Adapter Pattern")
+          <!-- .element: style="height: 16em;" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Problemstellung
+
+          Zwei vorhandene Klassenstrukturen passen nicht zueinander, aber eine der beiden neu zu implementieren ist zu
+          aufwendig.
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Problembeispiel
+
+          ![Adapter Problem Example](images/adapter.svg "Adapter Problem Example")
+          <!-- .element: class="fullscreen--horizontal" -->
+        </script>
+      </section>
+
+      <section>
+        <h2>Absicht</h2>
+
+        <blockquote>
+          <p>Convert the interface of a class into another interface clients expect. Adapter
+            lets classes work together that couldn't otherwise because of incompatible
+            interfaces.</p>
+          <footer>&mdash; <a href="http://www.uml.org.cn/c++/pdf/DesignPatterns.pdf" target="_blank">Gang of Four</a></footer>
+        </blockquote>
+
+        <div data-markdown>
+          <script type="text/template">
+            note:
+            * Überführt ein Interface einer Klasse in ein anderes Interface.
+            * Ein Adapter lässt Klassen zusammenarbeiten die es eigentlich nicht könnten wegen inkompatibler Interfaces
+          </script>
+        </div>
+      </section>
+
+      <section>
+        <h2>Struktur</h2>
+
+        Es gibt zwei Herangehensweisen an dieses Pattern.
+        <div class="column-2">
+          <div class="hyphenated fragment" data-markdown>
+            <script type="text/template">
+              #### Vererbung
+              ![Struktur inheritance](images/adapter-001.svg)
+              <!-- .element: class="fullscreen--horizontal" -->
+              * Adapter erbt von Interface und neuer Klasse
+              * Erfordert Interface
+
+            </script>
+          </div>
+          <div class="hyphenated fragment" data-markdown>
+            <script type="text/template">
+              #### Referenz
+              ![Struktur inheritance](images/adapter-002.svg)
+              <!-- .element: class="fullscreen--horizontal" -->
+              * Adapter hat Referenz auf Adaptee
+
+            </script>
+          </div>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Strukturbeispiel
+          #### Vererbung
+
+          ![Template Struktur](images/adapter-004.svg)
+          <!-- .element: class="fullscreen--horizontal" -->
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          #### Referenz
+
+          ![Template Struktur](images/adapter-003.svg)
+          <!-- .element: class="fullscreen--horizontal" -->
+        </script>
+      </section>
+
+      <section
+        data-background="../resources/images/backgrounds/background-checklist.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ## Checkliste Zur Implementierung
+
+            1. Identifiziere <span class="color-highlight">Target</span> und <span class="color-highlight">Adaptee</span>
+            2. <!-- .element: class="fragment" --> Wähle <span class="color-highlight">Patternvariante</span>
+            3. <!-- .element: class="fragment" --> Erzeuge <span class="color-highlight">Adapter</span>
+            4. <!-- .element: class="fragment" --> <span class="color-highlight">Implementiere Methoden</span> des Adapters
+          </script>
+        </div>
+      </section>
+
+      <section data-background="../resources/images/backgrounds/background-folgen.jpg">
+        <div class="box">
+          <h2>Folgen</h2>
+          <div class="column-2">
+            <div class="hyphenated fragment" data-markdown>
+              <script type="text/template">
+                #### Vererbung
+
+                * Adapter funktioniert nicht für Kinder von Adaptee
+                * <!-- .element: class="fragment" -->Adapter kann Funktionalität von Adaptee verändern
+                * <!-- .element: class="fragment" -->Nur eine Instanz nötig
+                * <!-- .element: class="fragment" -->Vermischt alte und neue Klassenkonzepte
+
+              </script>
+            </div>
+            <div class="hyphenated fragment" data-markdown>
+              <script type="text/template">
+                #### Referenz
+
+                * Ein Adapter kann prinzipiell alle Kinder von Adaptee anbinden
+                * <!-- .element: class="fragment" -->Kann Funktionalität ergänzen &mdash; Nicht überschreiben
+
+              </script>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-background="../resources/images/backgrounds/background-handson.jpg">
+        <div class="box" data-markdown>
+          ### Hands-on
+
+          ![Template Struktur](images/adapter-005.svg)
+          <!-- .element: class="fullscreen--horizontal" -->
+        </div>
+      </section>
+    </section>
+
+    <section data-background="images/wort-wolke.png">
+      <div class="box fragment">
+        <h2>Fazit</h2>
+        <div class="column-2">
+          <div data-markdown>
+            <script type="text/template">
+              #### Pattern
+
+              |   |   |
+              |:------------|:-------|
+              | Adapter     | State  |
+              | Template    | Bridge |
+              | Object Pool | Facade |
+              | Composite   |        |
+
+            </script>
+          </div>
+          <div data-markdown>
+            <script type="text/template">
+              #### Zweck
+
+              * Lösungen skizzieren
+              * Dokumentation
+              * Gemeinsame Sprache
+              * Saubere Architektur
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <img src="../theme/image/danke.png"
+           class="fullscreen--vertical">
+    </section>
+
+    <section>
+      <section id="Anti-Pattern" data-background="../resources/images/backgrounds/background-antipattern.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            Exkurs:
+
+            ## Anti-Pattern
+          </script>
+        </div>
+      </section>
+
+      <section data-background="../resources/images/backgrounds/background-antipattern.jpg">
+        <blockquote>
+          <p>An anti-pattern is a common <span class="fragment highlight-blue">response to a recurring problem</span>
+            that is usually <span class="fragment highlight-blue">ineffective</span> and risks being
+            <span class="fragment highlight-blue">highly counterproductive</span>.</p>
+          <footer>&mdash; Software design. Harlow, Eng.: Addison-Wesley</footer>
+        </blockquote>
+
+        <aside class="notes">
+          <ul>
+            <li>Anti-Pattern ist eine verbreitete Lösung zu oft wiederkehrenden Problemen</li>
+            <li>Diese ist aber ineffektiv oder und</li>
+            <li>höchstwahrscheinlich kontraproduktiv</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section data-background="../resources/images/backgrounds/background-antipattern.jpg">
+        <div class="box">
+          <div data-markdown>
+            <script type="text/template">
+              ### Bekannte Anti-Pattern
+
+              | Software Development | Software Architektur | Project Management    |
+              |:--------------------:|:--------------------:|:---------------------:|
+              | The God Class        | Vendor Lock-in       | Fear of Success       |
+              | Golden Hammer        | Warm Bodies          | Death By Planning     |
+              | Spagetti Code        | Reinvent The Wheel   | Intellectual Violence |
+
+
+            </script>
+          </div>
+        </div>
+
+        <aside class="notes">
+          <ul>
+            <li>Spagetti Code -> Unstructured Code</li>
+            <li>Warm Bodies -> Mehr Leute schnellere Umsetzung</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section data-background="../resources/images/backgrounds/background-antipattern.jpg">
+        <div class="box">
+          <a href="#/Anti-Pattern-Alarm"><i class="fas fa-arrow-alt-circle-left"></i> Zurück zum Thema</a>
+        </div>
+      </section>
+
+    </section>
+
+    <section>
+      <section id="Depedency-Injection" data-background="../resources/images/backgrounds/background-antipattern.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            Exkurs:
+
+            ## Depedency-Injection
+          </script>
+        </div>
+      </section>
+      <section data-background="../resources/images/backgrounds/background-antipattern.jpg">
+        <div class="box">
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/IKD2-MAkXyQ?rel=0" frameborder="0"
+                  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section data-background="../resources/images/backgrounds/background-antipattern.jpg">
+        <div class="box">
+          <a href="#/Static-Service-Locator"><i class="fas fa-arrow-alt-circle-left"></i> Zurück zum Thema</a>
+        </div>
+      </section>
+
+    </section>
+
+  </div>
+</div>
+
+<script src="../node_modules/reveal.js/lib/js/head.min.js"></script>
+<script src="../node_modules/reveal.js/js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize(
+        {
+            margin: 0.2,
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+            menu: {
+                // Specifies which side of the presentation the menu will
+                // be shown. Use 'left' or 'right'.
+                side: 'left',
+
+                // Specifies the width of the menu.
+                // Can be one of the following:
+                // 'normal', 'wide', 'third', 'half', 'full', or
+                // any valid css length value
+                width: 'wide',
+
+                // Add slide numbers to the titles in the slide list.
+                // Use 'true' or format string (same as reveal.js slide numbers)
+                numbers: false,
+
+                // Specifies which slide elements will be used for generating
+                // the slide titles in the menu. The default selects the first
+                // heading element found in the slide, but you can specify any
+                // valid css selector and the text from the first matching
+                // element will be used.
+                // Note: that a section data-menu-title attribute or an element
+                // with a menu-title class will take precedence over this option
+                titleSelector: 'h1, h2, h3',
+
+                // If slides do not have a matching title, attempt to use the
+                // start of the text content as the title instead
+                useTextContentForMissingTitles: false,
+
+                // Hide slides from the menu that do not have a title.
+                // Set to 'true' to only list slides with titles.
+                hideMissingTitles: true,
+
+                // Adds markers to the slide titles to indicate the
+                // progress through the presentation. Set to 'false'
+                // to hide the markers.
+                markers: true,
+
+                // Specify custom panels to be included in the menu, by
+                // providing an array of objects with 'title', 'icon'
+                // properties, and either a 'src' or 'content' property.
+                custom: false,
+
+                // Specifies the themes that will be available in the themes
+                // menu panel. Set to 'true' to show the themes menu panel
+                // with the default themes list. Alternatively, provide an
+                // array to specify the themes to make available in the
+                // themes menu panel, for example...
+                // [
+                //     { name: 'Black', theme: 'css/theme/black.css' },
+                //     { name: 'White', theme: 'css/theme/white.css' },
+                //     { name: 'League', theme: 'css/theme/league.css' }
+                // ]
+                themes: false,
+
+                // Specifies the path to the default theme files. If your
+                // presentation uses a different path to the standard reveal
+                // layout then you need to provide this option, but only
+                // when 'themes' is set to 'true'. If you provide your own
+                // list of themes or 'themes' is set to 'false' the
+                // 'themesPath' option is ignored.
+                themesPath: 'css/theme/',
+
+                // Specifies if the transitions menu panel will be shown.
+                // Set to 'true' to show the transitions menu panel with
+                // the default transitions list. Alternatively, provide an
+                // array to specify the transitions to make available in
+                // the transitions panel, for example...
+                // ['None', 'Fade', 'Slide']
+                transitions: false,
+
+                // Adds a menu button to the slides to open the menu panel.
+                // Set to 'false' to hide the button.
+                openButton: true,
+
+                // If 'true' allows the slide number in the presentation to
+                // open the menu panel. The reveal.js slideNumber option must
+                // be displayed for this to take effect
+                openSlideNumber: false,
+
+                // If true allows the user to open and navigate the menu using
+                // the keyboard. Standard keyboard interaction with reveal
+                // will be disabled while the menu is open.
+                keyboard: true,
+
+                // Normally the menu will close on user actions such as
+                // selecting a menu item, or clicking the presentation area.
+                // If 'true', the sticky option will leave the menu open
+                // until it is explicitly closed, that is, using the close
+                // button or pressing the ESC or m key (when the keyboard
+                // interaction option is enabled).
+                sticky: false,
+
+                // If 'true' standard menu items will be automatically opened
+                // when navigating using the keyboard. Note: this only takes
+                // effect when both the 'keyboard' and 'sticky' options are enabled.
+                autoOpen: true,
+
+                // If 'true' the menu will not be created until it is explicitly
+                // requested by calling RevealMenu.init(). Note this will delay
+                // the creation of all menu panels, including custom panels, and
+                // the menu button.
+                delayInit: false,
+
+                // If 'true' the menu will be shown when the menu is initialised.
+                openOnInit: false,
+
+                // By default the menu will load it's own font-awesome library
+                // icons. If your presentation needs to load a different
+                // font-awesome library the 'loadIcons' option can be set to false
+                // and the menu will not attempt to load the font-awesome library.
+                loadIcons: true
+            },
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+                {
+                    src: '../node_modules/reveal.js/lib/js/classList.js',
+                    condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/markdown/marked.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/markdown/markdown.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/search/search.js',
+                    async: true
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/zoom-js/zoom.js',
+                    async: true
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: '../plugin/sampler/sampler.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-sample]');
+                    }
+                },
+                {
+                    src: '../node_modules/reveal.js-menu/menu.js'
+                }]
+        });
+</script>
+
+</body>
+
+</html>

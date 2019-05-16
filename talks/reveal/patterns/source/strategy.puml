@@ -1,0 +1,168 @@
+@startuml
+hide circle
+
+abstract class Animal {
+    + {abstract} move($destination)
+}
+note right of Animal
+    Kontext
+end note
+
+class Ape {
+    + move($destination)
+}
+
+note right of Ape::move
+    Algorithmus
+end note
+
+class Lion{
+    + move($destination)
+}
+note left of Lion::move
+    ... always on
+    four paws
+end note
+
+Animal <|-- Ape
+Animal <|-- Lion
+
+@enduml
+
+@startuml
+
+abstract class Animal {
+    + {abstract} move($destination)
+}
+
+class Human {
+    + move($destination)
+}
+
+class Ape {
+    + move($destination)
+}
+
+class FastLion{
+    + move($destination)
+}
+
+class SilentLion{
+    + move($destination)
+}
+
+Animal <|-- Ape
+Animal <|-- SilentLion
+Animal <|-- Human
+Animal <|-- FastLion
+
+@enduml
+
+@startuml
+
+class Animal <<Context>> {
+    + setMoveStrategy(MoveStrategy)
+    + move($destination)
+}
+
+note left of Animal::move($destination)
+function move($destination) {
+    $moveStrategy->move();
+}
+end note
+
+interface MoveStrategy <<Strategy>>{
+    + {abstract} move($destination)
+}
+
+class FastMove <<ConcreteStrategy>> implements MoveStrategy {
+    +move($destination)
+}
+
+class SilentMove <<ConcreteStrategy>> implements MoveStrategy {
+    +move($destination)
+}
+
+class UprightMove <<ConcreteStrategy>> implements MoveStrategy {
+    +move($destination)
+}
+
+Animal o--> "moveStrategy" MoveStrategy
+
+@enduml
+
+
+
+@startuml
+hide Lion members
+hide Ape members
+hide Human members
+
+abstract class Animal {
+    + {abstract} move($destination)
+}
+
+abstract class TwoLeggedAnimal {
+    + move($destination)
+}
+
+class FastLion{
+    + move($destination)
+}
+
+class SilentLion{
+    + move($destination)
+}
+
+Animal <|-- TwoLeggedAnimal
+TwoLeggedAnimal <|-- Ape
+TwoLeggedAnimal <|-- Human
+Animal <|-- Lion
+Lion <|-- SilentLion
+Lion <|-- FastLion
+
+@enduml
+
+@startuml
+
+class Client
+class EncryptionService {
+    + encrypt(Source) : Cypher
+}
+
+class DES {
+    + set(Source) : void
+    + encrypt() : Cypher
+}
+
+class AES {
+    + encrypt(Source) : void
+    + createCypher() : Cypher
+}
+
+class RSA {
+    + encrypt(String) : String
+}
+
+class Source {
+    + __construct(String)
+    + getValue() : String
+}
+
+class Cypher {
+    + __construct(String)
+    + getCypherString() : String
+}
+
+EncryptionService <-- Client
+EncryptionService ..> Source : <<use>>
+EncryptionService ..> Cypher : <<create>>
+
+DES ..> Source : <<use>>
+DES ..> Cypher : <<create>>
+
+AES .up.> Source : <<use>>
+AES .up.> Cypher : <<create>>
+
+
+@enduml

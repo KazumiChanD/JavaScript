@@ -1,0 +1,24 @@
+@startuml
+
+skinparam sequence {
+  ParticipantBackgroundColor white
+  ParticipantBorderColor black
+}
+
+actor Client
+participant Game
+collections Player
+
+Client -> Game : getScoreInformation()
+activate Game #BBDDFF
+
+Game -[#0000FF]> Player : __toString()
+activate Player
+
+Game <-- Player : return $name
+deactivate Player
+
+Client <-- Game : Score Information
+deactivate Game
+
+@enduml

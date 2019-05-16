@@ -1,0 +1,38 @@
+@startuml
+skinparam state {
+  BackgroundColor white
+  BorderColor black
+}
+
+state commit #LightGreen{
+}
+
+state "tree 123" as 123 #LightBlue {
+}
+
+state "tree 333" as 333 #LightBlue {
+}
+
+state "blob 222" as 222 #PeachPuff {
+}
+
+state "blob 444" as 444 #PeachPuff {
+}
+
+commit : tree = 123
+commit : parent = 234
+commit : commiter = Bernd
+commit : message = Das ist ein tooler commit!
+
+commit --> 123
+
+123 : tree = 333
+123 : blob = 222
+
+123 --> 333
+123 --> 222
+
+333 : blob = 444
+
+333 --> 444
+@enduml

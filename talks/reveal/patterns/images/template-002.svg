@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="256px" preserveAspectRatio="none" style="width:517px;height:256px;" version="1.1" viewBox="0 0 517 256" width="517px" zoomAndPan="magnify"><defs><filter height="300%" id="f1crptkt4irknv" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class SecureConstructedObject--><rect fill="#FEFECE" filter="url(#f1crptkt4irknv)" height="73.9102" id="SecureConstructedObject" style="stroke: #A80036; stroke-width: 1.5;" width="187" x="319.5" y="29.5"/><ellipse cx="339" cy="45.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M341.9731,51.1431 Q341.3921,51.4419 340.7529,51.5913 Q340.1138,51.7407 339.4082,51.7407 Q336.9014,51.7407 335.5815,50.0889 Q334.2617,48.437 334.2617,45.3159 Q334.2617,42.1865 335.5815,40.5347 Q336.9014,38.8828 339.4082,38.8828 Q340.1138,38.8828 340.7612,39.0322 Q341.4087,39.1816 341.9731,39.4805 L341.9731,42.2031 Q341.3423,41.6221 340.7488,41.3523 Q340.1553,41.0825 339.5244,41.0825 Q338.1797,41.0825 337.4949,42.1492 Q336.8101,43.2158 336.8101,45.3159 Q336.8101,47.4077 337.4949,48.4744 Q338.1797,49.541 339.5244,49.541 Q340.1553,49.541 340.7488,49.2712 Q341.3423,49.0015 341.9731,48.4204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="145" x="354" y="50.0352">SecureConstructedObject</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="320.5" x2="505.5" y1="61.5" y2="61.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="320.5" x2="505.5" y1="69.5" y2="69.5"/><ellipse cx="330.5" cy="81.4775" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="106" x="339.5" y="84.1348">{final} __construct()</text><polygon fill="#FFFF44" points="330.5,89.4326,334.5,93.4326,330.5,97.4326,326.5,93.4326" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="161" x="339.5" y="97.0898">additionalConstructionSteps()</text><path d="M6,8 L6,79.2422 A0,0 0 0 0 6,79.2422 L284,79.2422 A0,0 0 0 0 284,79.2422 L284,47.6211 L323.5,79.9775 L284,39.6211 L284,18 L274,8 L6,8 A0,0 0 0 0 6,8 " fill="#FBFB77" filter="url(#f1crptkt4irknv)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M274,8 L274,18 L284,18 L274,8 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="147" x="12" y="25.5684">funciton __construct() {</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="163" x="28" y="40.8789">$this-&gt;highlyImportant();</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="241" x="28" y="56.1895">$this-&gt;additionalConstructionSteps();</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="4" x="12" y="71.5">}</text><path d="M6,89.2422 L6,114.5527 A0,0 0 0 0 6,114.5527 L66,114.5527 A0,0 0 0 0 66,114.5527 L66,107.2422 L323.5,92.9326 L66,99.2422 L66,99.2422 L56,89.2422 L6,89.2422 A0,0 0 0 0 6,89.2422 " fill="#FBFB77" filter="url(#f1crptkt4irknv)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M56,89.2422 L56,99.2422 L66,99.2422 L56,89.2422 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="39" x="12" y="106.8105">empty</text><!--class ChildClass--><rect fill="#FEFECE" filter="url(#f1crptkt4irknv)" height="60.9551" id="ChildClass" style="stroke: #A80036; stroke-width: 1.5;" width="187" x="319.5" y="185"/><ellipse cx="379.25" cy="201" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M382.2231,206.6431 Q381.6421,206.9419 381.0029,207.0913 Q380.3638,207.2407 379.6582,207.2407 Q377.1514,207.2407 375.8315,205.5889 Q374.5117,203.937 374.5117,200.8159 Q374.5117,197.6865 375.8315,196.0347 Q377.1514,194.3828 379.6582,194.3828 Q380.3638,194.3828 381.0112,194.5322 Q381.6587,194.6816 382.2231,194.9805 L382.2231,197.7031 Q381.5923,197.1221 380.9988,196.8523 Q380.4053,196.5825 379.7744,196.5825 Q378.4297,196.5825 377.7449,197.6492 Q377.0601,198.7158 377.0601,200.8159 Q377.0601,202.9077 377.7449,203.9744 Q378.4297,205.041 379.7744,205.041 Q380.4053,205.041 380.9988,204.7712 Q381.5923,204.5015 382.2231,203.9204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="59" x="399.75" y="205.5352">ChildClass</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="320.5" x2="505.5" y1="217" y2="217"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="320.5" x2="505.5" y1="225" y2="225"/><polygon fill="#FFFF44" points="330.5,231.9775,334.5,235.9775,330.5,239.9775,326.5,235.9775" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="161" x="339.5" y="239.6348">additionalConstructionSteps()</text><!--link SecureConstructedObject$$$LEFT to SecureConstructedObject--><!--link SecureConstructedObject to ChildClass--><path d="M413,123.9435 C413,144.6556 413,167.2265 413,184.7753 " fill="none" id="SecureConstructedObject-ChildClass" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="406.0001,123.7147,413,103.7146,420.0001,123.7146,406.0001,123.7147" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+
+class SecureConstructedObject{
+    + {final} __construct()
+    # additionalConstructionSteps()
+}
+
+note left of SecureConstructedObject::__construct
+    funciton __construct() {
+        $this->highlyImportant();
+        $this->additionalConstructionSteps();
+    }
+endnote
+
+note left of SecureConstructedObject::additionalConstructionSteps
+empty
+endnote
+
+class ChildClass extends SecureConstructedObject{
+    # additionalConstructionSteps()
+}
+
+
+@enduml
+
+PlantUML version 1.2018.09(Fri Jul 27 18:58:18 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b8
+Operating System: Mac OS X
+OS Version: 10.13.6
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>

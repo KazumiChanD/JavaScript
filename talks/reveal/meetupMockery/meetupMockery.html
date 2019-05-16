@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>PHPUnit + Mockery = <3</title>
+
+  <meta name="description"
+        content="A presentation about PHPUnit and Mockery">
+  <meta name="author" content="Sebastian Knott">
+  <meta name="apple-mobile-web-app-capable"
+        content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="../node_modules/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../theme/zooroyal.css" id="theme">
+
+  <!-- Theme used for code samples -->
+  <link rel="stylesheet"
+        href="../node_modules/highlight.js/styles/railscasts.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? '../node_modules/reveal.js/css/print/pdf.css' :
+          '../node_modules/reveal.js/css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+
+  <!--[if lt IE 9]>
+  <script src="../node_modules/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<section id="zoologo">
+  <a href="http://zooroyal.de"></a>
+</section>
+<div class="reveal">
+  <div class="slides">
+    <section data-background="../theme/image/banner-opacity.jpg"
+             data-menu-title="Home">
+      <h1>PHPUnit<br/>Mockery<br/>Hamcrest</h1>
+      <p>ZooRoyal IT</p>
+      <p>Sebastian Knott</p>
+      <script>document.write(new Date().toLocaleDateString())</script>
+    </section>
+
+    <section>
+      <div class="column-2">
+        <div>
+          <img class="fullscreen--vertical"
+               src="images/sebastianKnottKlein.png"/>
+        </div>
+        <div data-markdown>
+          <script type="text/template">
+            ## Sebastian Knott
+            Entwickler bei Zooroyal
+
+            Interner Workshoper
+
+            Software Architekt
+
+            TDD-Apologist
+
+            PHP seit <strike>Ewigkeiten</strike> 2006
+          </script>
+        </div>
+      </div>
+
+    </section>
+
+    <section
+        data-background="../resources/images/backgrounds/background-questions.jpg">
+
+      <div class="box" data-markdown>
+        <script type="text/template">
+          ## Umfrage
+
+          Wie sieht's denn aus &hellip;
+
+          * <!-- .element: class="fragment" -->
+          &hellip; mit Unit Tests &hellip;
+          * <!-- .element: class="fragment" -->
+          &hellip; mit PHPUnit &hellip;
+          * <!-- .element: class="fragment" -->
+          &hellip; und Mockery &hellip;
+          * <!-- .element: class="fragment" -->
+          &hellip; im Alltag?
+
+        </script>
+      </div>
+
+    </section>
+
+    <section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Warum Mockery
+
+          -----
+        </script>
+      </section>
+
+      <section class="hyphenated" data-markdown>
+        <script type="text/template">
+          ### Unit Test sind &hellip;
+
+          &hellip; praktisch um Bugs zu finden. <!-- .element: class="fragment" -->
+
+          &hellip; gut fürs Geschäft. <!-- .element: class="fragment" -->
+
+          &hellip; voll im Trend. <!-- .element: class="fragment" -->
+
+          &hellip; zeitaufwendig. <!-- .element: class="fragment" -->
+
+          note:
+
+          * Man kann sie nie ausschließen aber wenigstens einige finden
+          * Weniger Bugs
+          * weniger Ausfälle
+          * weniger Angst vor großen Änderungen
+          * kürzer Time-to-Market
+          * Sehr weit verbreitet
+          * Kommen nicht umsonst
+          * Entwickler ausbilden gute Tests zu schreiben
+          * In die tägliche Arbeit integrieren
+          * Infrastruktur -> CI
+
+          Wie Hilft uns Mockery?
+        </script>
+      </section>
+
+      <section>
+        <h3>Wie hilft uns Mockery?</h3>
+        <div class="column-2">
+          <div>
+            <img src="images/mockery-docs.png">
+            <footer>—
+              <a href="http://docs.mockery.io/en/latest/">
+                docs.mockery.io</a>
+            </footer>
+          </div>
+          <div class="hyphenated" data-markdown>
+            <script type="text/template">
+              * <!-- .element: class="fragment" -->
+              PHP-Mock-Framework
+              * <!-- .element: class="fragment" -->
+              Prägnanten API
+              * <!-- .element: class="fragment" -->
+              Menschen lesbaren domänenspezifischen Sprache (DSL)
+              * <!-- .element: class="fragment" -->
+              Alternative zu PHPUnits phpunit-mock-objects-Bibliothek
+            </script>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3> Beispiel gefällig?</h3>
+      </section>
+
+      <section>
+        <h4>Testen eines fluent interfaces &hellip;</h4>
+        <pre class="clear"><code class="language-php hljs"
+                                 data-sample='src/examples/php/src/Example.php#2-5,9-13,26-35'
+                                 data-trim></code></pre>
+      </section>
+
+      <section>
+        <h4>&hellip; mit PHPUnit-Mocks</h4>
+        <pre><code class="language-php hljs"
+                   data-sample='src/examples/php/tests/ExampleTestFluentPhpUnit.php#foo'
+                   data-sample-mark="6-11"
+                   data-trim></code></pre>
+      </section>
+
+      <section>
+        <h4>&hellip; mit Mockery-Mocks</h4>
+        <pre><code class="language-php hljs"
+                   data-sample='src/examples/php/tests/ExampleTestFluent.php#foo'
+                   data-sample-mark="6-8"
+                   data-trim></code></pre>
+      </section>
+
+    </section>
+
+    <section>
+
+      <section>
+        <h2>Was kann Mockery?</h2>
+        <hr/>
+      </section>
+
+      <section>
+        <h3>Doubles</h3>
+        <div class="column-2" style="grid-template-columns: 1fr 2fr;">
+          <div>
+            <img src="images/mockery-images/double.jpg">
+          </div>
+          <div class="hyphenated" data-markdown>
+            <script type="text/template">
+              * <!-- .element: class="fragment" -->
+              Doubles sind Objekte
+              * <!-- .element: class="fragment" -->
+              Ersetzen Klassen
+              * <!-- .element: class="fragment" -->
+              Weniger komplex als Original
+              * <!-- .element: class="fragment" -->
+              Interaktion beobachten
+              * <!-- .element: class="fragment" -->
+              Kontrolle über Programmfluss
+            </script>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Doubles in Tests</h3>
+        <ul aria-label="Doubles spielen eine wichtige Rolle bei Unit-Tests.">
+          <li class="fragment">Abhängigkeiten des Testsubjekts durch Doubles
+            ersetzt</li>
+          <li class="fragment">Subjekt wird vollständig isoliert (keine Nebeneffekte)</li>
+          <li class="fragment">Abhängigkeiten müssen nicht aufwendig erzeugt werden</li>
+          <li class="fragment">Interaktion des Subjekts mit den Doubles kann geprüft werden</li>
+
+        </ul>
+        <pre class="clear fragment">
+          <code data-trim>
+            $container = Mockery::mock(ContainerInterface::class);
+
+            $subject = new MyClass($container);
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        Es gibt zwei relevante Arten von Doubles in Mockery
+        <div class="column-2">
+          <div class="fragment">
+            <h4>Mocks</h4>
+            <img src="images/mocks.jpg"/>
+          </div>
+          <div class="fragment">
+            <h4>Spies</h4>
+            <img src="images/spies.jpg">
+          </div>
+        </div>
+      </section>
+
+      <section data-background="images/mocks.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Mocks
+
+            Mocks bieten erweiterte Funktionalität zur <br/>
+            Simulation einer Klasse.
+
+            ![Strategy](images/mocks.svg)
+            <!-- .element: style="width:10em;" -->
+          </script>
+        </div>
+      </section>
+
+      <section data-background="images/mocks.jpg">
+        <div class="box">
+
+          <pre class="clear">
+            <code data-trim>
+              $container = Mockery::mock(Container::class);
+
+              $container->shouldReceive('foo')->once()
+                ->with(stringValue())->andReturn(true);
+
+              $subject = new MyClass($container);
+              $subject->call();
+            </code>
+          </pre>
+
+          <div data-markdown>
+            <script type="text/template">
+              * <!-- .element: class="fragment" -->
+              Dynamisch erzeugte Objekte
+              * <!-- .element: class="fragment" -->
+              Programmflusskontrolle
+              * <!-- .element: class="fragment" -->
+              Programmflussanalyse
+              * <!-- .element: class="fragment" -->
+              Konfiguration in komplexen <br/>
+              Fällen umständlich
+            </script>
+          </div>
+        </div>
+      </section>
+
+      <section data-background="images/spies.jpg">
+        <div class="box" data-markdown>
+          <script type="text/template">
+            ### Spies
+
+            Spies leiten Methodenaufrufe an das <br/>
+            Original weiter und zeichnen die <br/>
+            Interaktion zur späteren Analyse auf.
+
+            ![Strategy](images/spies.svg)
+            <!-- .element: style="width:10em;" -->
+          </script>
+        </div>
+      </section>
+
+      <section data-background="images/spies.jpg">
+        <div class="box">
+
+            <pre class="clear">
+            <code data-trim>
+              $container = Mockery::spy(Container::class);
+
+              $subject = new MyClass($container);
+              $subject->call();
+
+              $container->shouldHaveReceived('foo');
+            </code>
+          </pre>
+
+          <div data-markdown>
+            <script type="text/template">
+              * <!-- .element: class="fragment" -->
+              Sehr einfach zu erzeugen
+              * <!-- .element: class="fragment" -->
+              Programmflussanalyse
+              * <!-- .element: class="fragment" -->
+              Bricht Isolation des Subjects
+            </script>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section
+        data-background="../resources/images/backgrounds/background-rocket-start.jpg">
+
+    </section>
+
+    <section>
+      <section>
+        <h3>Big Parent Class</h3>
+
+        <div class="column-2">
+          <div>
+            <pre style="width:100%"><code class="language-php"
+                                          data-sample="src/examples/php/src/Snippets/BigParentClass.php#foo"
+                                          data-trim>
+
+            </code></pre>
+
+            <pre style="width:100%"><code class="language-php"
+                                          data-sample="src/examples/php/src/Snippets/ChildClass.php#foo"
+                                          data-trim></code></pre>
+          </div>
+          <div>
+            <img style="height: 100%;
+                        width: auto;
+                        object-fit: unset;
+                        max-height: unset;"
+                 src="images/bigAssParentClass.svg" alt="BigParentClass"/>
+          </div>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          #### Partial Mocks
+
+          ![PartialMocks](images/partialMocks.svg)
+
+          * Bestimmte Methoden werden gemockt
+          * Andere werden an das Original geleitet
+        </script>
+      </section>
+
+      <section>
+        <h4>Test in Mockery</h4>
+
+        <pre><code class="language-php"
+                   data-sample="src/examples/php/tests/Snippets/ChildClassTest.php#foo"
+                   data-trim>
+
+          </code></pre>
+
+      </section>
+    </section>
+
+
+    <section>
+      <section data-menu-title="Big Parent Class (Protected Edition)">
+        <h3>Big Parent Class</h3>
+        <div
+            class="color-red"
+            style="font-weight:bold;
+            transform: rotate(20deg);
+            top: -2.5em;
+            position: relative;
+            right: -18em;
+            width: fit-content;">
+          Protected Edition
+        </div>
+        <div class="column-2">
+          <div>
+            <pre style="width:100%"><code class="language-php"
+                                          data-sample="src/examples/php/src/Snippets/BigParentClassProtected.php#foo"
+                                          data-sample-mark="3"
+                                          data-trim></code></pre>
+
+            <pre style="width:100%"><code class="language-php"
+                                          data-sample="src/examples/php/src/Snippets/ChildClass.php#foo"
+                                          data-trim></code></pre>
+          </div>
+          <div>
+            <img src="images/bigAssParentClassProtected.svg"
+                 style="height: 100%;
+                        width: auto;
+                        object-fit: unset;
+                        max-height: unset;"
+                 alt="BigParentClassProtected"/>
+          </div>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          #### Mocking Protected Methods
+
+          Mit Mockery ist es möglich <code>protected function</code> zu
+          mocken.
+
+          <div class="column-2">
+            <div>
+          <pre style="width:100%"><code class="language-php" data-trim>
+          class MyClass
+          {
+            protected function foo(){}
+          }
+          </code></pre>
+            </div>
+            <div>
+          <pre style="width:100%"><code class="language-php" data-trim>
+          $mock = Mockery::mock('MyClass')
+            ->shouldAllowMockingProtectedMethods();
+
+          $mock->shouldReceive('foo');
+          </code></pre>
+            </div>
+          </div>
+        </script>
+      </section>
+
+      <section>
+        <h4>Test in Mockery</h4>
+
+        <pre><code class="language-php"
+                   data-sample="src/examples/php/tests/Snippets/ChildClassTestProtected.php#foo"
+                   data-sample-mark="2"
+                   data-trim></code></pre>
+      </section>
+    </section>
+
+
+    <section>
+
+      <section>
+        <h3>The dreaded new operator</h3>
+        <pre><code class="language-php"
+                   data-sample="src/examples/php/src/Snippets/Service.php#foo"
+                   data-sample-mark="5"
+                   data-trim></code></pre>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          #### Mocking Hard Dependencies
+
+          Mockery ermöglicht es das Autoloading von Klassen zu überschreiben.
+          Damit sind auch <code>new</code>-Operatoren kein Problem mehr.
+          <div class="column-2">
+            <div>
+          <pre style="width:100%"><code class="language-php" data-trim>
+          class Blub {
+            public function foo()
+            {
+              $bar = new Bar();
+              $bar->baz();
+            }
+          }
+          </code></pre>
+            </div>
+            <div>
+          <pre style="width:100%"><code class="language-php" data-trim>
+          $mock = m::mock('overload:' . Bar::class);
+
+          $mock->shouldReceive('baz');
+          </code></pre>
+            </div>
+          </div>
+        </script>
+      </section>
+
+      <section>
+        <h4>Test</h4>
+        <pre><code class="language-php"
+                   data-sample="src/examples/php/tests/Snippets/ServiceTest.php"
+                   data-sample-mark="18"
+                   data-trim></code></pre>
+      </section>
+    </section>
+
+
+    <section>
+      <section>
+        <h3>Complicated Callbacks</h3>
+        <pre><code class="language-php"
+                   data-sample="src/examples/php/src/Archivist.php#foo"
+                   data-trim></code></pre>
+      </section>
+
+      <section>
+        <h4>Hamcrest</h4>
+
+        Matchers that can be combined to create<br/>
+        flexible expressions of intent. <br/>
+        &ndash; hamcrest.org
+
+        <pre><code class="language-php" data-trim>
+          MatcherAssert::assertThat(
+            ['asd', 'qwe'],
+            both(hasItem('asd'))
+            ->andAlso(everyItem(is(stringValue())))
+          );
+        </code></pre>
+
+      </section>
+
+      <section data-markdown>
+        <script type="text/template" >
+          <table>
+            <thead>
+            <tr>
+              <th>Core</th>
+              <th>Logical</th>
+              <th>Object</th>
+              <th>Number</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>anything</td>
+              <td>allOf</td>
+              <td data-fragment-index="3"
+                  class="fragment highlight-red">equalTo</td>
+              <td>closeTo</td>
+            </tr>
+            <tr>
+              <td>describedAs</td>
+              <td>anyOf</td>
+              <td data-fragment-index="3"
+                  class="fragment highlight-red">anInstanceOf</td>
+              <td>greaterThan</td>
+            </tr>
+            <tr>
+              <td data-fragment-index="1"
+                  class="fragment highlight-red">is</td>
+              <td data-fragment-index="4"
+                  class="fragment highlight-red">not</td>
+              <td>nullValue</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td data-fragment-index="2"
+              class="fragment highlight-red">both</td>
+              <td data-fragment-index="5"
+                  class="fragment highlight-red">sameInstance</td>
+            </tr>
+            </tbody>
+          </table>
+
+<span class="fragment" data-fragment-index="0">$subject </span>
+<span class="fragment" data-fragment-index="1">is </span>
+<span class="fragment" data-fragment-index="2">both </span>
+<span class="fragment" data-fragment-index="3">anInstanceOf $type </span>
+<span class="fragment" data-fragment-index="2">andAlso </span>
+<span class="fragment" data-fragment-index="4">not </span>
+<span class="fragment" data-fragment-index="5">sameInstance $object</span>
+
+          <pre class="fragment"><code data-trim>
+            is(
+              both(
+                anInstanceOf($type)
+              )->andAlso(
+                not(
+                  sameInstance($object)
+                )
+              )
+            );</code></pre>
+
+        </script>
+      </section>
+
+      <section>
+        <h4>Test</h4>
+        <pre><code class="language-php"
+                   data-sample="src/examples/php/tests/ArchivistTest.php#foo"
+                   data-sample-mark="9-12"
+                   data-trim></code></pre>
+      </section>
+
+    </section>
+
+    <section>
+      <img src="../theme/image/danke.png"
+           class="fullscreen--vertical">
+    </section>
+
+  </div>
+</div>
+
+<script src="../node_modules/reveal.js/lib/js/head.min.js"></script>
+<script src="../node_modules/reveal.js/js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize(
+        {
+            //margin: 0.2,
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+            menu: {
+                // Specifies which side of the presentation the menu will
+                // be shown. Use 'left' or 'right'.
+                side: 'left',
+
+                // Specifies the width of the menu.
+                // Can be one of the following:
+                // 'normal', 'wide', 'third', 'half', 'full', or
+                // any valid css length value
+                width: 'wide',
+
+                // Add slide numbers to the titles in the slide list.
+                // Use 'true' or format string (same as reveal.js slide numbers)
+                numbers: false,
+
+                // Specifies which slide elements will be used for generating
+                // the slide titles in the menu. The default selects the first
+                // heading element found in the slide, but you can specify any
+                // valid css selector and the text from the first matching
+                // element will be used.
+                // Note: that a section data-menu-title attribute or an element
+                // with a menu-title class will take precedence over this option
+                titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+                // If slides do not have a matching title, attempt to use the
+                // start of the text content as the title instead
+                useTextContentForMissingTitles: false,
+
+                // Hide slides from the menu that do not have a title.
+                // Set to 'true' to only list slides with titles.
+                hideMissingTitles: true,
+
+                // Adds markers to the slide titles to indicate the
+                // progress through the presentation. Set to 'false'
+                // to hide the markers.
+                markers: true,
+
+                // Specify custom panels to be included in the menu, by
+                // providing an array of objects with 'title', 'icon'
+                // properties, and either a 'src' or 'content' property.
+                custom: false,
+
+                // Specifies the themes that will be available in the themes
+                // menu panel. Set to 'true' to show the themes menu panel
+                // with the default themes list. Alternatively, provide an
+                // array to specify the themes to make available in the
+                // themes menu panel, for example...
+                // [
+                //     { name: 'Black', theme: 'css/theme/black.css' },
+                //     { name: 'White', theme: 'css/theme/white.css' },
+                //     { name: 'League', theme: 'css/theme/league.css' }
+                // ]
+                themes: false,
+
+                // Specifies the path to the default theme files. If your
+                // presentation uses a different path to the standard reveal
+                // layout then you need to provide this option, but only
+                // when 'themes' is set to 'true'. If you provide your own
+                // list of themes or 'themes' is set to 'false' the
+                // 'themesPath' option is ignored.
+                themesPath: 'css/theme/',
+
+                // Specifies if the transitions menu panel will be shown.
+                // Set to 'true' to show the transitions menu panel with
+                // the default transitions list. Alternatively, provide an
+                // array to specify the transitions to make available in
+                // the transitions panel, for example...
+                // ['None', 'Fade', 'Slide']
+                transitions: false,
+
+                // Adds a menu button to the slides to open the menu panel.
+                // Set to 'false' to hide the button.
+                openButton: true,
+
+                // If 'true' allows the slide number in the presentation to
+                // open the menu panel. The reveal.js slideNumber option must
+                // be displayed for this to take effect
+                openSlideNumber: false,
+
+                // If true allows the user to open and navigate the menu using
+                // the keyboard. Standard keyboard interaction with reveal
+                // will be disabled while the menu is open.
+                keyboard: true,
+
+                // Normally the menu will close on user actions such as
+                // selecting a menu item, or clicking the presentation area.
+                // If 'true', the sticky option will leave the menu open
+                // until it is explicitly closed, that is, using the close
+                // button or pressing the ESC or m key (when the keyboard
+                // interaction option is enabled).
+                sticky: false,
+
+                // If 'true' standard menu items will be automatically opened
+                // when navigating using the keyboard. Note: this only takes
+                // effect when both the 'keyboard' and 'sticky' options are enabled.
+                autoOpen: true,
+
+                // If 'true' the menu will not be created until it is explicitly
+                // requested by calling RevealMenu.init(). Note this will delay
+                // the creation of all menu panels, including custom panels, and
+                // the menu button.
+                delayInit: false,
+
+                // If 'true' the menu will be shown when the menu is initialised.
+                openOnInit: false,
+
+                // By default the menu will load it's own font-awesome library
+                // icons. If your presentation needs to load a different
+                // font-awesome library the 'loadIcons' option can be set to false
+                // and the menu will not attempt to load the font-awesome library.
+                loadIcons: true
+            },
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+                {
+                    src: '../node_modules/reveal.js/lib/js/classList.js',
+                    condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/markdown/marked.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/markdown/markdown.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/search/search.js',
+                    async: true
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/zoom-js/zoom.js',
+                    async: true
+                },
+                {
+                    src: '../node_modules/reveal.js/plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: '../plugin/sampler/sampler.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-sample]');
+                    }
+                },
+                {
+                    src: '../node_modules/reveal.js-menu/menu.js'
+                }]
+        });
+</script>
+
+</body>
+
+</html>

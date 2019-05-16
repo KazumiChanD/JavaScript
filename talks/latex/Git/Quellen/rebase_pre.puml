@@ -1,0 +1,25 @@
+@startuml
+skinparam state {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam note {
+  BackgroundColor white
+  BorderColor black
+}
+
+
+state "78aca6" as commit3 #LightGreen{
+}
+state "c5a34a" as commit3b #LightGreen{
+}
+state "a90567" as commit5 #LightBlue{
+}
+
+note top of commit5 : neuer Branch
+note top of commit3b : master
+
+commit3b --> commit3
+commit5 --> commit3
+
+@enduml

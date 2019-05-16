@@ -1,0 +1,77 @@
+@startuml
+skinparam state {
+  BackgroundColor white
+  BorderColor black
+  FontSize 25
+}
+skinparam stateArrow {
+  FontSize 25
+}
+
+state "commit a123sd" as commit1 #LightGreen {
+    state "tree" as 123 #LightBlue {
+    }
+    state "tree" as 333 #LightBlue {
+    }
+    state "blob" as 222 #PeachPuff {
+    }
+    state "blob" as 444 #PeachPuff {
+    }
+
+    123 --> 333
+    123 --> 222
+    333 --> 444
+}
+
+
+state "commit a222sd" as commit2 #LightGreen {
+    state "tree" as 1231 #LightBlue {
+    }
+    state "tree" as 3331 #LightBlue {
+    }
+    state "blob" as 2221 #PeachPuff {
+    }
+    state "blob" as 4441 #PeachPuff {
+    }
+
+    1231 --> 3331
+    1231 --> 2221
+    3331 --> 4441
+}
+
+
+state "commit baa234" as commit3 #LightGreen {
+    state "tree" as 1232 #LightBlue {
+    }
+    state "tree" as 3332 #LightBlue {
+    }
+    state "blob" as 2222 #PeachPuff {
+    }
+    state "blob" as 4442 #PeachPuff {
+    }
+
+    1232 --> 3332
+    1232 --> 2222
+    3332 --> 4442
+}
+
+
+state "commit a76342" as commit4 #LightGreen {
+    state "tree" as 1233 #LightBlue {
+    }
+    state "tree" as 3333 #LightBlue {
+    }
+    state "blob" as 2223 #PeachPuff {
+    }
+    state "blob" as 4443 #PeachPuff {
+    }
+
+    1233 --> 3333
+    1233 --> 2223
+    3333 --> 4443
+}
+
+commit1 -left-> commit2 : parent\na222sd
+commit2 -left-> commit3 : parent\nbaa234
+commit3 -left-> commit4 : parent\na76342
+@enduml

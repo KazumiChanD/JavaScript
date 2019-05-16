@@ -1,0 +1,73 @@
+@startuml
+
+abstract class AbstractClass{
+    + templateMethod()
+    + {abstract} operation1()
+    + {abstract} operation2()
+}
+
+note left of AbstractClass::templateMethod
+[...]
+operation1()
+[...]
+operation2()
+[...]
+endnote
+
+class ConcreteClass extends AbstractClass{
+    +operation1()
+    +operation2()
+}
+
+@enduml
+
+@startuml
+
+abstract class Worker{
+    + DailyRoutine()
+    # getUp()
+    # eat()
+    # {abstract} work()
+    # relax()
+    # sleep()
+}
+
+class FireFighter extends Worker{
+    # work()
+}
+
+class Postman extends Worker{
+    # work()
+}
+
+class Manager extends Worker{
+    # work()
+    # relax()
+}
+
+@enduml
+
+@startuml
+
+class SecureConstructedObject{
+    + {final} __construct()
+    # additionalConstructionSteps()
+}
+
+note left of SecureConstructedObject::__construct
+    funciton __construct() {
+        $this->highlyImportant();
+        $this->additionalConstructionSteps();
+    }
+endnote
+
+note left of SecureConstructedObject::additionalConstructionSteps
+empty
+endnote
+
+class ChildClass extends SecureConstructedObject{
+    # additionalConstructionSteps()
+}
+
+
+@enduml

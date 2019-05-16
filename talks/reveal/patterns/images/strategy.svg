@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="185px" preserveAspectRatio="none" style="width:581px;height:185px;" version="1.1" viewBox="0 0 581 185" width="581px" zoomAndPan="magnify"><defs><filter height="300%" id="f1kcjf5hmms2s1" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Animal--><rect fill="#FEFECE" filter="url(#f1kcjf5hmms2s1)" height="53.0879" id="Animal" style="stroke: #A80036; stroke-width: 1.5;" width="130" x="223" y="8"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="39" x="268.5" y="24.6016">Animal</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="224" x2="352" y1="32.1328" y2="32.1328"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="224" x2="352" y1="40.1328" y2="40.1328"/><ellipse cx="234" cy="52.1104" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="104" x="243" y="54.7676">move($destination)</text><path d="M388,22 L388,30.5 L353.127,34.5 L388,38.5 L388,47.3105 A0,0 0 0 0 388,47.3105 L458,47.3105 A0,0 0 0 0 458,47.3105 L458,32 L448,22 L388,22 A0,0 0 0 0 388,22 " fill="#FBFB77" filter="url(#f1kcjf5hmms2s1)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M448,22 L448,32 L458,32 L448,22 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="49" x="394" y="39.5684">Kontext</text><!--class Ape--><rect fill="#FEFECE" filter="url(#f1kcjf5hmms2s1)" height="53.0879" id="Ape" style="stroke: #A80036; stroke-width: 1.5;" width="130" x="6" y="121"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="23" x="59.5" y="137.6016">Ape</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="135" y1="145.1328" y2="145.1328"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="135" y1="153.1328" y2="153.1328"/><ellipse cx="17" cy="165.1104" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="104" x="26" y="167.7676">move($destination)</text><path d="M171.5,130 L171.5,138.6553 L130,163.6104 L171.5,146.6553 L171.5,155.3105 A0,0 0 0 0 171.5,155.3105 L270.5,155.3105 A0,0 0 0 0 270.5,155.3105 L270.5,140 L260.5,130 L171.5,130 A0,0 0 0 0 171.5,130 " fill="#FBFB77" filter="url(#f1kcjf5hmms2s1)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M260.5,130 L260.5,140 L270.5,140 L260.5,130 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="177.5" y="147.5684">Algorithmus</text><!--class Lion--><rect fill="#FEFECE" filter="url(#f1kcjf5hmms2s1)" height="53.0879" id="Lion" style="stroke: #A80036; stroke-width: 1.5;" width="130" x="440" y="121"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="23" x="493.5" y="137.6016">Lion</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="441" x2="569" y1="145.1328" y2="145.1328"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="441" x2="569" y1="153.1328" y2="153.1328"/><ellipse cx="451" cy="165.1104" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="104" x="460" y="167.7676">move($destination)</text><path d="M305.5,122 L305.5,162.6211 A0,0 0 0 0 305.5,162.6211 L404.5,162.6211 A0,0 0 0 0 404.5,162.6211 L404.5,146.3105 L444,163.6104 L404.5,138.3105 L404.5,132 L394.5,122 L305.5,122 A0,0 0 0 0 305.5,122 " fill="#FBFB77" filter="url(#f1kcjf5hmms2s1)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M394.5,122 L394.5,132 L404.5,132 L394.5,122 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="311.5" y="139.5684">... always on</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="62" x="311.5" y="154.8789">four paws</text><!--link Ape to Ape$$$RIGHT--><!--link Lion$$$LEFT to Lion--><!--link Animal to Ape--><path d="M219.0428,70.4086 C187.6318,86.7655 151.0986,105.7897 122.1834,120.8469 " fill="none" id="Animal-Ape" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="215.8767,64.1651,236.8488,61.1363,222.3429,76.5824,215.8767,64.1651" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Animal to Lion--><path d="M356.9572,70.4086 C388.3682,86.7655 424.9014,105.7897 453.8166,120.8469 " fill="none" id="Animal-Lion" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="353.6571,76.5824,339.1512,61.1363,360.1233,64.1651,353.6571,76.5824" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+hide circle
+
+abstract class Animal {
+    + {abstract} move($destination)
+}
+note right of Animal
+    Kontext
+end note
+
+class Ape {
+    + move($destination)
+}
+
+note right of Ape::move
+    Algorithmus
+end note
+
+class Lion{
+    + move($destination)
+}
+note left of Lion::move
+    ... always on
+    four paws
+end note
+
+Animal <|- - Ape
+Animal <|- - Lion
+
+@enduml
+
+PlantUML version 1.2018.09(Fri Jul 27 18:58:18 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b8
+Operating System: Mac OS X
+OS Version: 10.13.6
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>

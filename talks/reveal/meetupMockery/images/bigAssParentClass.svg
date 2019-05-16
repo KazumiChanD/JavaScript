@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="200px" preserveAspectRatio="none" style="width:235px;height:200px;" version="1.1" viewBox="0 0 235 200" width="235px" zoomAndPan="magnify"><defs><filter height="300%" id="f14xtlolidk0y3" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class BigParentClass--><rect fill="#FEFECE" filter="url(#f14xtlolidk0y3)" height="60.9551" id="BigParentClass" style="stroke: #A80036; stroke-width: 1.5;" width="120" x="104.5" y="8"/><ellipse cx="121.3" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M124.2731,29.6431 Q123.6921,29.9419 123.0529,30.0913 Q122.4138,30.2407 121.7082,30.2407 Q119.2014,30.2407 117.8815,28.5889 Q116.5617,26.937 116.5617,23.8159 Q116.5617,20.6865 117.8815,19.0347 Q119.2014,17.3828 121.7082,17.3828 Q122.4138,17.3828 123.0612,17.5322 Q123.7087,17.6816 124.2731,17.9805 L124.2731,20.7031 Q123.6423,20.1221 123.0488,19.8523 Q122.4553,19.5825 121.8244,19.5825 Q120.4797,19.5825 119.7949,20.6492 Q119.1101,21.7158 119.1101,23.8159 Q119.1101,25.9077 119.7949,26.9744 Q120.4797,28.041 121.8244,28.041 Q122.4553,28.041 123.0488,27.7712 Q123.6423,27.5015 124.2731,26.9204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="84" x="135.7" y="28.5352">BigParentClass</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="105.5" x2="223.5" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="105.5" x2="223.5" y1="48" y2="48"/><ellipse cx="115.5" cy="59.9775" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="124.5" y="62.6348">doesEveryThing()</text><!--class ChildClass--><rect fill="#FEFECE" filter="url(#f14xtlolidk0y3)" height="60.9551" id="ChildClass" style="stroke: #A80036; stroke-width: 1.5;" width="113" x="108" y="129"/><ellipse cx="132.9" cy="145" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M135.8731,150.6431 Q135.2921,150.9419 134.6529,151.0913 Q134.0138,151.2407 133.3082,151.2407 Q130.8014,151.2407 129.4815,149.5889 Q128.1617,147.937 128.1617,144.8159 Q128.1617,141.6865 129.4815,140.0347 Q130.8014,138.3828 133.3082,138.3828 Q134.0138,138.3828 134.6612,138.5322 Q135.3087,138.6816 135.8731,138.9805 L135.8731,141.7031 Q135.2423,141.1221 134.6488,140.8523 Q134.0553,140.5825 133.4244,140.5825 Q132.0797,140.5825 131.3949,141.6492 Q130.7101,142.7158 130.7101,144.8159 Q130.7101,146.9077 131.3949,147.9744 Q132.0797,149.041 133.4244,149.041 Q134.0553,149.041 134.6488,148.7712 Q135.2423,148.5015 135.8731,147.9204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="59" x="149.1" y="149.5352">ChildClass</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="109" x2="220" y1="161" y2="161"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="109" x2="220" y1="169" y2="169"/><ellipse cx="119" cy="180.9775" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="87" x="128" y="183.6348">doesOneThing()</text><path d="M6,147 L6,172.3105 A0,0 0 0 0 6,172.3105 L73,172.3105 A0,0 0 0 0 73,172.3105 L73,165 L107.7888,159.5 L73,157 L73,157 L63,147 L6,147 A0,0 0 0 0 6,147 " fill="#FBFB77" filter="url(#f14xtlolidk0y3)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M63,147 L63,157 L73,157 L63,147 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="46" x="12" y="164.5684">Subject</text><!--link BigParentClass to ChildClass--><path d="M164.5,89.2927 C164.5,102.7857 164.5,116.9401 164.5,128.9764 " fill="none" id="BigParentClass-ChildClass" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="157.5001,89.0334,164.5,69.0334,171.5001,89.0334,157.5001,89.0334" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+
+class BigParentClass {
+    + doesEveryThing()
+}
+
+class ChildClass {
+    + doesOneThing()
+}
+
+BigParentClass <|- - ChildClass
+
+note left of ChildClass
+Subject
+end note
+
+@enduml
+
+PlantUML version 1.2018.01(Sun Jan 28 19:08:22 CET 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b8
+Operating System: Mac OS X
+OS Version: 10.13.6
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>
