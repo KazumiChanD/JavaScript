@@ -7,25 +7,26 @@ export class LeaInsertSorter extends Sorter {
         const itemsToSortLength = this._itemsToSort.length;
         const itemsToSort = this._itemsToSort;
 
+        /**
+         * Schleife zum durchlaufen der aktuelen Position
+         *
+         */
+        for (let currentPosition = 1; currentPosition < itemsToSortLength; currentPosition++) {
+            let nextPosition = currentPosition + 1;
 
-        for (let currentPosition = 0; currentPosition < itemsToSortLength; currentPosition++) {
-            let nextPosition = currentPosition +1;
-
+            /**
+             * Schleife zum durchlaufen der zweiten Position
+             *
+             */
             for (;itemsToSort[nextPosition] < itemsToSort[currentPosition];) {
-                insert(currentPosition, nextPosition, itemsToSort);
+                let shortSave = itemsToSort[currentPosition];
+                itemsToSort[currentPosition] = itemsToSort[currentPosition + 1];
+                itemsToSort[currentPosition + 1] = shortSave;
             }
 
-        }
 
-        function insert(itemsToSort, currentPosition, nextPosition) {
-            let shortSave = itemsToSort[currentPosition];
-            itemsToSort[currentPosition] = itemsToSort[nextPosition];
-            itemsToSort[nextPosition] = shortSave;
         }
 
     }
-
-
-
 
 }
